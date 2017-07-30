@@ -50,6 +50,20 @@
     // _bar.backgroundColor = [UIColor whiteColor];
 }
 
+- (void)setStatusBarStyle:(UIStatusBarStyle)statusBarStyle
+{
+    _statusBarStyle = statusBarStyle;
+
+    // 让系统调用 - (UIStatusBarStyle)preferredStatusBarStyle 方法.
+    // OC中,有很多系统方法方法A 都是由方法B来间接调用的
+    [self setNeedsStatusBarAppearanceUpdate];
+}
+
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return _statusBarStyle;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

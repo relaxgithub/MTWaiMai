@@ -51,6 +51,7 @@
 		CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DEA1F2DFB250099F862 /* MTNavigationController.m */; };
 		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
 		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
+		CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,6 +150,9 @@
 		CC464DED1F2DFC860099F862 /* MTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationBar.m; sourceTree = "<group>"; };
 		CC464DEF1F2E01B40099F862 /* MTBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseController.h; sourceTree = "<group>"; };
 		CC464DF01F2E01B40099F862 /* MTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseController.m; sourceTree = "<group>"; };
+		CC5737DA1F2E2570003F6723 /* category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = category.h; sourceTree = "<group>"; };
+		CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MTNumberAddition.h"; sourceTree = "<group>"; };
+		CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MTNumberAddition.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -249,6 +253,9 @@
 		CC464D681F2DF48B0099F862 /* Common(分类) */ = {
 			isa = PBXGroup;
 			children = (
+				CC5737DA1F2E2570003F6723 /* category.h */,
+				CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */,
+				CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */,
 			);
 			name = "Common(分类)";
 			path = Common;
@@ -450,6 +457,7 @@
 				CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */,
 				CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */,
 				CC464DD91F2DF9200099F862 /* SDWebImageManager.m in Sources */,
+				CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */,
 				CC464DD51F2DF9200099F862 /* SDWebImageCompat.m in Sources */,
 				CC464DDA1F2DF9200099F862 /* SDWebImagePrefetcher.m in Sources */,
 				CC464DC51F2DF9200099F862 /* AFURLSessionManager.m in Sources */,
@@ -641,6 +649,7 @@
 				CC464D601F2DF3DE0099F862 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

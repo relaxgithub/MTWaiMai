@@ -17,4 +17,7 @@
 // 内部创建的控件,外部不允许重复赋值
 @property (nonatomic,weak,readonly) UINavigationItem *barItem;
 
+// 状态栏样式
+@property (nonatomic,assign) UIStatusBarStyle statusBarStyle;
+
 @end

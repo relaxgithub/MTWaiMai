@@ -10,6 +10,6 @@
 
 @interface MTNavigationBar : UINavigationBar
 
-
+@property (nonatomic,weak) UIImageView *imgView;
 
 @end

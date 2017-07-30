@@ -55,4 +55,11 @@
     [self popViewControllerAnimated:YES];
 }
 
+
+// 把状态栏的控制权交给栈顶控制器
+- (UIViewController *)childViewControllerForStatusBarStyle
+{
+    return self.topViewController;
+}
+
 @end

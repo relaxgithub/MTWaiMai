@@ -2,7 +2,12 @@
 // 所以,一些比较公用的头文件,基本都可以定义在这里.
 
 
+#ifdef __OBJC__  // 只有oc的.h .m文件,在导入这些头文件
+
 #import "AFNetworking.h" // 网络加载第三方库
 #import "Masonry.h" // 约束
 #import "UIView+WebCache.h" // 图片文件缓存
 
+#import "category.h" // 全局的分类文件
+
+#endif

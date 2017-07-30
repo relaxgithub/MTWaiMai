@@ -26,6 +26,7 @@
     // 设置标题
     self.barItem.title = @"过桥米线";
 
+   
 }
 
 - (void)didReceiveMemoryWarning {

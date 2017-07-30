@@ -5,6 +5,20 @@
       "scale" : "1x"
     },
     {
+      "resizing" : {
+        "mode" : "9-part",
+        "center" : {
+          "mode" : "tile",
+          "width" : 2,
+          "height" : 1
+        },
+        "cap-insets" : {
+          "bottom" : 28,
+          "top" : 27,
+          "right" : 10,
+          "left" : 8
+        }
+      },
       "idiom" : "universal",
       "filename" : "bg_navigationBar_white@2x.png",
       "scale" : "2x"
