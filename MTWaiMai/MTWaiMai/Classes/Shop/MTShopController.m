@@ -8,6 +8,7 @@
 
 #import "MTShopController.h"
 #import "MTFoodDetailController.h"
+#import "MTNavigationBar.h"
 
 @interface MTShopController ()
 
@@ -20,6 +21,8 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor orangeColor];
+
+    self.bar.backgroundColor = [UIColor purpleColor];
 
 }
 

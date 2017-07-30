@@ -6,8 +6,8 @@
 //  Copyright © 2017年 relax. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "MTBaseController.h"
 
-@interface MTFoodDetailController : UIViewController
+@interface MTFoodDetailController : MTBaseController
 
 @end

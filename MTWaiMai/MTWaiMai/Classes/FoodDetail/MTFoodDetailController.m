@@ -7,6 +7,7 @@
 //
 
 #import "MTFoodDetailController.h"
+#import "MTNavigationBar.h"
 
 @interface MTFoodDetailController ()
 
@@ -19,6 +20,8 @@
     [super viewDidLoad];
 
     self.view.backgroundColor = [UIColor colorWithRed:0.16863 green:0.79608 blue:0.97255 alpha:1.00000];
+
+    self.bar.backgroundColor = [UIColor yellowColor];
 
 }
 

@@ -49,6 +49,8 @@
 		CC464DE51F2DF9C00099F862 /* MTShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DE41F2DF9C00099F862 /* MTShopController.m */; };
 		CC464DE81F2DF9CC0099F862 /* MTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DE71F2DF9CC0099F862 /* MTFoodDetailController.m */; };
 		CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DEA1F2DFB250099F862 /* MTNavigationController.m */; };
+		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
+		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +145,10 @@
 		CC464DE71F2DF9CC0099F862 /* MTFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailController.m; sourceTree = "<group>"; };
 		CC464DE91F2DFB250099F862 /* MTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationController.h; sourceTree = "<group>"; };
 		CC464DEA1F2DFB250099F862 /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
+		CC464DEC1F2DFC860099F862 /* MTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationBar.h; sourceTree = "<group>"; };
+		CC464DED1F2DFC860099F862 /* MTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationBar.m; sourceTree = "<group>"; };
+		CC464DEF1F2E01B40099F862 /* MTBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseController.h; sourceTree = "<group>"; };
+		CC464DF01F2E01B40099F862 /* MTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,9 +182,9 @@
 			isa = PBXGroup;
 			children = (
 				CC464D6B1F2DF4A60099F862 /* AppDelegate(app代理) */,
-				CC464D641F2DF48B0099F862 /* Classes */,
 				CC464D681F2DF48B0099F862 /* Common(分类) */,
 				CC464D691F2DF48B0099F862 /* Libs(第三方库) */,
+				CC464D641F2DF48B0099F862 /* Classes */,
 				CC464D4A1F2DF3DE0099F862 /* Supporting Files */,
 			);
 			path = MTWaiMai;
@@ -199,9 +205,9 @@
 		CC464D641F2DF48B0099F862 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				CC464D651F2DF48B0099F862 /* FoodDetail(实物详情) */,
 				CC464D661F2DF48B0099F862 /* Main(主要的) */,
 				CC464D671F2DF48B0099F862 /* Shop(商店列表) */,
+				CC464D651F2DF48B0099F862 /* FoodDetail(实物详情) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -221,6 +227,10 @@
 			children = (
 				CC464DE91F2DFB250099F862 /* MTNavigationController.h */,
 				CC464DEA1F2DFB250099F862 /* MTNavigationController.m */,
+				CC464DEC1F2DFC860099F862 /* MTNavigationBar.h */,
+				CC464DED1F2DFC860099F862 /* MTNavigationBar.m */,
+				CC464DEF1F2E01B40099F862 /* MTBaseController.h */,
+				CC464DF01F2E01B40099F862 /* MTBaseController.m */,
 			);
 			name = "Main(主要的)";
 			path = Main;
@@ -437,6 +447,8 @@
 			files = (
 				CC464DDF1F2DF9200099F862 /* UIImageView+HighlightedWebCache.m in Sources */,
 				CC464DC01F2DF9200099F862 /* AFHTTPSessionManager.m in Sources */,
+				CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */,
+				CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */,
 				CC464DD91F2DF9200099F862 /* SDWebImageManager.m in Sources */,
 				CC464DD51F2DF9200099F862 /* SDWebImageCompat.m in Sources */,
 				CC464DDA1F2DF9200099F862 /* SDWebImagePrefetcher.m in Sources */,
