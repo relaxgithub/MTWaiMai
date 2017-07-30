@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "MTShopController.h" // 第一个展示的是食品列表
+#import "MTNavigationController.h" // 隐藏了navigationBar的导航控制器
+
 
 @interface AppDelegate ()
 
@@ -15,8 +18,19 @@
 @implementation AppDelegate
 
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+
+    MTShopController *shopVC = [[MTShopController alloc] init];
+
+    // 为了解决默认的导航控制器view公用navigationBar 在pop的时候,左边那个 < 默认只是消失,并不回往回退,影响pop后的视图的导航栏的显示.所以重写一个navigationBar,把导航栏隐藏.并为每一个view,单独的添加navigationBar
+    MTNavigationController *naviVC = [[MTNavigationController alloc] initWithRootViewController:shopVC];
+    
+    self.window.rootViewController = naviVC;
+
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
 
