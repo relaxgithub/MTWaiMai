@@ -23,6 +23,13 @@
         // 在这里可以预创建一些子视图,赋值非位置和大小的属性.
         MTNavigationBar *bar = [[MTNavigationBar alloc] init];
         _bar = bar;
+
+        // navigationItem 是为 navigationBar服务的,如果重写了navigationBar,那么就需要手动的建立两者之间的关系.
+        UINavigationItem *item = [[UINavigationItem alloc] init];
+
+        [_bar setItems:@[item]];//手动建立 item 和 bar 之间的关系
+        _barItem = item;
+
     }
 
     return self;

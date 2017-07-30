@@ -7,6 +7,7 @@
 //
 
 #import "MTNavigationController.h"
+#import "MTBaseController.h"
 
 @interface MTNavigationController ()
 
@@ -28,19 +29,30 @@
 
 }
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+// 给非栈底控制器,添加返回按钮
+- (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    [super pushViewController:viewController animated:animated];
+
+    if (self.childViewControllers.count > 1)
+    {
+        // 如果使用的是initWithImage,就需要自己处理pop方法
+        ((MTBaseController *)viewController).barItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_backItem"] style:UIBarButtonItemStylePlain target:self action:@selector(pop)];
+    }
+
+}
+
+- (void)pop
+{
+    // 当前被打开的视图可以pop,导航控制器也可以全局pop
+    [self popViewControllerAnimated:YES];
+}
 
 @end
