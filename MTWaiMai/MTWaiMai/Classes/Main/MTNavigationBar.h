@@ -10,4 +10,6 @@
 
 @interface MTNavigationBar : UINavigationBar
 
+@property (nonatomic,weak) UINavigationItem *barItem;
+
 @end

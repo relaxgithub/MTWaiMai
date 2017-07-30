@@ -36,7 +36,7 @@
     [self.view addSubview:_bar];
     [_bar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.offset(0);
-        make.height.offset(180);
+        make.height.offset(64);
     }];
 
     // 把这些个性化的内容放到子类中去设置.

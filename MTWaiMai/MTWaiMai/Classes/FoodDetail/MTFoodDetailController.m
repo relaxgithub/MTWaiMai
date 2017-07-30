@@ -23,6 +23,9 @@
 
     self.bar.backgroundColor = [UIColor yellowColor];
 
+    // 设置标题
+    self.bar.barItem.title = @"过桥米线";
+
 }
 
 - (void)didReceiveMemoryWarning {

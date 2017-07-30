@@ -22,7 +22,10 @@
 
     self.view.backgroundColor = [UIColor orangeColor];
 
+    // 设置navigationBar
     self.bar.backgroundColor = [UIColor purpleColor];
+    // 设置标题
+    self.bar.barItem.title = @"五香肉饼";
 
 }
 
