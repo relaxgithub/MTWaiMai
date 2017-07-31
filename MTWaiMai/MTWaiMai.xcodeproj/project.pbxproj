@@ -57,6 +57,7 @@
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
 		CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */; };
 		CC9A57B91F2F7AE9005D91DA /* UIImage+DashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */; };
+		CC9A57BD1F2F808A005D91DA /* MTPOI_SHOP_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -168,6 +169,8 @@
 		CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHeaderView.m; sourceTree = "<group>"; };
 		CC9A57B71F2F7AE9005D91DA /* UIImage+DashLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DashLine.h"; sourceTree = "<group>"; };
 		CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DashLine.m"; sourceTree = "<group>"; };
+		CC9A57BB1F2F808A005D91DA /* MTPOI_SHOP_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPOI_SHOP_Model.h; sourceTree = "<group>"; };
+		CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPOI_SHOP_Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +264,7 @@
 		CC464D671F2DF48B0099F862 /* Shop(商店列表) */ = {
 			isa = PBXGroup;
 			children = (
+				CC9A57BA1F2F805E005D91DA /* Model */,
 				CC9A57B31F2F69E8005D91DA /* View */,
 				CC464DE31F2DF9C00099F862 /* MTShopController.h */,
 				CC464DE41F2DF9C00099F862 /* MTShopController.m */,
@@ -440,6 +444,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		CC9A57BA1F2F805E005D91DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC9A57BB1F2F808A005D91DA /* MTPOI_SHOP_Model.h */,
+				CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -553,6 +566,7 @@
 				CC464DCF1F2DF9200099F862 /* ViewController+MASAdditions.m in Sources */,
 				CC464DD01F2DF9200099F862 /* MKAnnotationView+WebCache.m in Sources */,
 				CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */,
+				CC9A57BD1F2F808A005D91DA /* MTPOI_SHOP_Model.m in Sources */,
 				CC464DCB1F2DF9200099F862 /* MASViewConstraint.m in Sources */,
 				CC464DE01F2DF9200099F862 /* UIImageView+WebCache.m in Sources */,
 				CC464DE21F2DF9200099F862 /* UIView+WebCacheOperation.m in Sources */,

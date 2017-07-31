@@ -6,7 +6,7 @@
 
 #import "AFNetworking.h" // 网络加载第三方库
 #import "Masonry.h" // 约束
-#import "UIView+WebCache.h" // 图片文件缓存
+#import "UIImageView+WebCache.h" // 图片文件缓存
 
 #import "category.h" // 全局的分类文件
 

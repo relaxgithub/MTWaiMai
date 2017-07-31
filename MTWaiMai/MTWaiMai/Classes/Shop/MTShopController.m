@@ -13,6 +13,7 @@
 #import "MTCommentController.h"
 #import "MTInfoController.h"
 #import "MTHeaderView.h"
+#import "MTPOI_SHOP_Model.h"
 
 
 #define KMaxHeaderViewHeight 180
@@ -21,7 +22,7 @@
 @interface MTShopController () <UIScrollViewDelegate>
 
 /// 头部视图
-@property (nonatomic,weak) UIView *headerView;
+@property (nonatomic,weak) MTHeaderView *headerView;
 
 /// 中部滑动视图
 @property (nonatomic,weak) UIView *middleTagView;
@@ -31,6 +32,9 @@
 
 /// 黄色小黄条
 @property (nonatomic,weak) UIView *yellowLineView;
+
+/// 头部视图需要用到的model
+@property (nonatomic,strong) MTPOI_SHOP_Model *poi_Shop_Model;
 
 @end
 
@@ -42,10 +46,33 @@
     // 写在这里的话,系统的viewDidLoad方法一个都没执行,会影响子控件的添加吗?
     // [self settingShopHeader];
 
+    // 加载店铺数据
+    [self loadShopData];
 
     [super viewDidLoad];
 
     [self setupUI];
+}
+
+#pragma mark - 加载店铺数据
+- (void)loadShopData
+{
+    [[AFHTTPSessionManager manager] GET:@"https://raw.githubusercontent.com/relaxgithub/webResources/master/food.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
+
+        NSDictionary *poi_info_dict = responseObject[@"data"][@"poi_info"];
+
+        _poi_Shop_Model = [MTPOI_SHOP_Model poi_ShopWithDict:poi_info_dict];
+
+        // 给headerView赋值
+        _headerView.poi_Shop_Model = _poi_Shop_Model;
+
+
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        if (error) {
+            NSLog(@"%@",error);
+
+        }
+    }];
 }
 
 #pragma mark - 当前页面view设置
@@ -110,6 +137,7 @@
     headerView.backgroundColor = [UIColor redColor];
     // 新添加的头部视图,不要覆盖之前添加的navigationBar
     [self.view insertSubview:self.bar aboveSubview:headerView];
+
 
 }
 
