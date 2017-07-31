@@ -55,6 +55,7 @@
 		CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */; };
 		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
+		CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -162,6 +163,8 @@
 		CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCommentController.m; sourceTree = "<group>"; };
 		CC9A57B01F2F51E2005D91DA /* MTInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoController.h; sourceTree = "<group>"; };
 		CC9A57B11F2F51E2005D91DA /* MTInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoController.m; sourceTree = "<group>"; };
+		CC9A57B41F2F69FB005D91DA /* MTHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHeaderView.h; sourceTree = "<group>"; };
+		CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHeaderView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,6 +258,7 @@
 		CC464D671F2DF48B0099F862 /* Shop(商店列表) */ = {
 			isa = PBXGroup;
 			children = (
+				CC9A57B31F2F69E8005D91DA /* View */,
 				CC464DE31F2DF9C00099F862 /* MTShopController.h */,
 				CC464DE41F2DF9C00099F862 /* MTShopController.m */,
 			);
@@ -422,6 +426,15 @@
 			path = Order;
 			sourceTree = "<group>";
 		};
+		CC9A57B31F2F69E8005D91DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC9A57B41F2F69FB005D91DA /* MTHeaderView.h */,
+				CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -533,6 +546,7 @@
 				CC464DD71F2DF9200099F862 /* SDWebImageDownloader.m in Sources */,
 				CC464DCF1F2DF9200099F862 /* ViewController+MASAdditions.m in Sources */,
 				CC464DD01F2DF9200099F862 /* MKAnnotationView+WebCache.m in Sources */,
+				CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */,
 				CC464DCB1F2DF9200099F862 /* MASViewConstraint.m in Sources */,
 				CC464DE01F2DF9200099F862 /* UIImageView+WebCache.m in Sources */,
 				CC464DE21F2DF9200099F862 /* UIView+WebCacheOperation.m in Sources */,
