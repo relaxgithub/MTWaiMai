@@ -12,6 +12,7 @@
 #import "MTOrderController.h"
 #import "MTCommentController.h"
 #import "MTInfoController.h"
+#import "MTHeaderView.h"
 
 
 #define KMaxHeaderViewHeight 180
@@ -97,7 +98,7 @@
 #pragma mark - 设置头部
 - (void)settingShopHeader
 {
-    UIView *headerView = [[UIView alloc] init];
+    MTHeaderView *headerView = [[MTHeaderView alloc] init];
     [self.view addSubview:headerView];
     _headerView = headerView;
 

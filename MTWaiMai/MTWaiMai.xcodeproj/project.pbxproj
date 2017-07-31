@@ -56,6 +56,7 @@
 		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
 		CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */; };
+		CC9A57B91F2F7AE9005D91DA /* UIImage+DashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -165,6 +166,8 @@
 		CC9A57B11F2F51E2005D91DA /* MTInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoController.m; sourceTree = "<group>"; };
 		CC9A57B41F2F69FB005D91DA /* MTHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTHeaderView.h; sourceTree = "<group>"; };
 		CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTHeaderView.m; sourceTree = "<group>"; };
+		CC9A57B71F2F7AE9005D91DA /* UIImage+DashLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+DashLine.h"; sourceTree = "<group>"; };
+		CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DashLine.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +275,8 @@
 				CC5737DA1F2E2570003F6723 /* category.h */,
 				CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */,
 				CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */,
+				CC9A57B71F2F7AE9005D91DA /* UIImage+DashLine.h */,
+				CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */,
 			);
 			name = "Common(分类)";
 			path = Common;
@@ -524,6 +529,7 @@
 				CC464DDE1F2DF9200099F862 /* UIImage+WebP.m in Sources */,
 				CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */,
 				CC464DC91F2DF9200099F862 /* MASLayoutConstraint.m in Sources */,
+				CC9A57B91F2F7AE9005D91DA /* UIImage+DashLine.m in Sources */,
 				CC464DD31F2DF9200099F862 /* SDImageCache.m in Sources */,
 				CC464DE11F2DF9200099F862 /* UIView+WebCache.m in Sources */,
 				CC464DC71F2DF9200099F862 /* MASConstraint.m in Sources */,
