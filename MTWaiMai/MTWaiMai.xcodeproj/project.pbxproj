@@ -52,6 +52,9 @@
 		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
 		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
 		CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */; };
+		CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */; };
+		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
+		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +156,12 @@
 		CC5737DA1F2E2570003F6723 /* category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = category.h; sourceTree = "<group>"; };
 		CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MTNumberAddition.h"; sourceTree = "<group>"; };
 		CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MTNumberAddition.m"; sourceTree = "<group>"; };
+		CC9A57AA1F2F51CE005D91DA /* MTOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderController.h; sourceTree = "<group>"; };
+		CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderController.m; sourceTree = "<group>"; };
+		CC9A57AD1F2F51D9005D91DA /* MTCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommentController.h; sourceTree = "<group>"; };
+		CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCommentController.m; sourceTree = "<group>"; };
+		CC9A57B01F2F51E2005D91DA /* MTInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTInfoController.h; sourceTree = "<group>"; };
+		CC9A57B11F2F51E2005D91DA /* MTInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTInfoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +221,9 @@
 				CC464D661F2DF48B0099F862 /* Main(主要的) */,
 				CC464D671F2DF48B0099F862 /* Shop(商店列表) */,
 				CC464D651F2DF48B0099F862 /* FoodDetail(实物详情) */,
+				CC9A57A91F2F51A8005D91DA /* Order(点菜) */,
+				CC9A57A31F2F5185005D91DA /* Comment(评论) */,
+				CC9A57A71F2F5185005D91DA /* Info(商家) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -380,6 +392,36 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		CC9A57A31F2F5185005D91DA /* Comment(评论) */ = {
+			isa = PBXGroup;
+			children = (
+				CC9A57AD1F2F51D9005D91DA /* MTCommentController.h */,
+				CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */,
+			);
+			name = "Comment(评论)";
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		CC9A57A71F2F5185005D91DA /* Info(商家) */ = {
+			isa = PBXGroup;
+			children = (
+				CC9A57B01F2F51E2005D91DA /* MTInfoController.h */,
+				CC9A57B11F2F51E2005D91DA /* MTInfoController.m */,
+			);
+			name = "Info(商家)";
+			path = Info;
+			sourceTree = "<group>";
+		};
+		CC9A57A91F2F51A8005D91DA /* Order(点菜) */ = {
+			isa = PBXGroup;
+			children = (
+				CC9A57AA1F2F51CE005D91DA /* MTOrderController.h */,
+				CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */,
+			);
+			name = "Order(点菜)";
+			path = Order;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -467,6 +509,7 @@
 				CC464D4C1F2DF3DE0099F862 /* main.m in Sources */,
 				CC464DCE1F2DF9200099F862 /* View+MASAdditions.m in Sources */,
 				CC464DDE1F2DF9200099F862 /* UIImage+WebP.m in Sources */,
+				CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */,
 				CC464DC91F2DF9200099F862 /* MASLayoutConstraint.m in Sources */,
 				CC464DD31F2DF9200099F862 /* SDImageCache.m in Sources */,
 				CC464DE11F2DF9200099F862 /* UIView+WebCache.m in Sources */,
@@ -477,6 +520,7 @@
 				CC464DCD1F2DF9200099F862 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				CC464DDD1F2DF9200099F862 /* UIImage+MultiFormat.m in Sources */,
 				CC464DD61F2DF9200099F862 /* SDWebImageDecoder.m in Sources */,
+				CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */,
 				CC464DC61F2DF9200099F862 /* MASCompositeConstraint.m in Sources */,
 				CC464DD11F2DF9200099F862 /* NSData+ImageContentType.m in Sources */,
 				CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */,
@@ -494,6 +538,7 @@
 				CC464DE21F2DF9200099F862 /* UIView+WebCacheOperation.m in Sources */,
 				CC464D6E1F2DF4A60099F862 /* AppDelegate.m in Sources */,
 				CC464DCA1F2DF9200099F862 /* MASViewAttribute.m in Sources */,
+				CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */,
 				CC464DE81F2DF9CC0099F862 /* MTFoodDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
