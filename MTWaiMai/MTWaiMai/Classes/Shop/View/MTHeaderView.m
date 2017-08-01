@@ -8,11 +8,12 @@
 
 #import "MTHeaderView.h"
 #import "MTPOI_SHOP_Model.h"
+#import "MTLoopInfoContainerView.h"
 
 @interface MTHeaderView ()
 
 /// 轮播视图
-@property (nonatomic,weak) UIView *loopInfoView;
+@property (nonatomic,weak) MTLoopInfoContainerView *loopInfoView;
 
 /// 头像
 @property (nonatomic,weak) UIImageView *avartaView;
@@ -25,6 +26,8 @@
 
 /// 背景图片
 @property (nonatomic,weak) UIImageView *backImgView;
+
+
 
 @end
 
@@ -60,13 +63,14 @@
     }];
 
     // 1.轮播信息
-    UIView *loopInfoView = [[UIView alloc] init];
+    MTLoopInfoContainerView *loopInfoView = [[MTLoopInfoContainerView alloc] init];
     [self addSubview:loopInfoView];
     _loopInfoView = loopInfoView;
-    loopInfoView.backgroundColor = [UIColor yellowColor];
+    loopInfoView.backgroundColor = [UIColor clearColor];
 
     [loopInfoView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.bottom.right.offset(0);
+        make.left.right.offset(0);
+        make.bottom.offset(-8);
         make.height.offset(20);
     }];
 
@@ -136,7 +140,7 @@
 
     // 头像
     NSURL *picURL = [NSURL URLWithString:[poi_Shop_Model.pic_url stringByDeletingPathExtension]];
-    NSLog(@"%@",picURL);
+   // NSLog(@"%@",picURL);
 
     [_avartaView sd_setImageWithURL:picURL];
     // 店名
@@ -146,6 +150,9 @@
 
     // 设置背景图片
     [_backImgView sd_setImageWithURL:[NSURL URLWithString:[poi_Shop_Model.poi_back_pic_url stringByDeletingPathExtension]]];
+
+    // 设置轮播视图
+    _loopInfoView.models = poi_Shop_Model.discounts;
 
 
 }

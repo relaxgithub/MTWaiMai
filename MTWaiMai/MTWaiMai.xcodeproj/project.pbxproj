@@ -58,6 +58,9 @@
 		CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */; };
 		CC9A57B91F2F7AE9005D91DA /* UIImage+DashLine.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */; };
 		CC9A57BD1F2F808A005D91DA /* MTPOI_SHOP_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */; };
+		CC9A57C01F3027FC005D91DA /* MTDiscount2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57BF1F3027FC005D91DA /* MTDiscount2Model.m */; };
+		CC9A57C31F302A95005D91DA /* MTLoopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */; };
+		CC9A57C61F30344B005D91DA /* MTLoopInfoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -171,6 +174,12 @@
 		CC9A57B81F2F7AE9005D91DA /* UIImage+DashLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+DashLine.m"; sourceTree = "<group>"; };
 		CC9A57BB1F2F808A005D91DA /* MTPOI_SHOP_Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTPOI_SHOP_Model.h; sourceTree = "<group>"; };
 		CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTPOI_SHOP_Model.m; sourceTree = "<group>"; };
+		CC9A57BE1F3027FC005D91DA /* MTDiscount2Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTDiscount2Model.h; sourceTree = "<group>"; };
+		CC9A57BF1F3027FC005D91DA /* MTDiscount2Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTDiscount2Model.m; sourceTree = "<group>"; };
+		CC9A57C11F302A95005D91DA /* MTLoopInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLoopInfoView.h; sourceTree = "<group>"; };
+		CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLoopInfoView.m; sourceTree = "<group>"; };
+		CC9A57C41F30344B005D91DA /* MTLoopInfoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLoopInfoContainerView.h; sourceTree = "<group>"; };
+		CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLoopInfoContainerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -440,6 +449,10 @@
 			children = (
 				CC9A57B41F2F69FB005D91DA /* MTHeaderView.h */,
 				CC9A57B51F2F69FB005D91DA /* MTHeaderView.m */,
+				CC9A57C11F302A95005D91DA /* MTLoopInfoView.h */,
+				CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */,
+				CC9A57C41F30344B005D91DA /* MTLoopInfoContainerView.h */,
+				CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -449,6 +462,8 @@
 			children = (
 				CC9A57BB1F2F808A005D91DA /* MTPOI_SHOP_Model.h */,
 				CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */,
+				CC9A57BE1F3027FC005D91DA /* MTDiscount2Model.h */,
+				CC9A57BF1F3027FC005D91DA /* MTDiscount2Model.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -553,7 +568,9 @@
 				CC464DDD1F2DF9200099F862 /* UIImage+MultiFormat.m in Sources */,
 				CC464DD61F2DF9200099F862 /* SDWebImageDecoder.m in Sources */,
 				CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */,
+				CC9A57C01F3027FC005D91DA /* MTDiscount2Model.m in Sources */,
 				CC464DC61F2DF9200099F862 /* MASCompositeConstraint.m in Sources */,
+				CC9A57C31F302A95005D91DA /* MTLoopInfoView.m in Sources */,
 				CC464DD11F2DF9200099F862 /* NSData+ImageContentType.m in Sources */,
 				CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */,
 				CC464DD81F2DF9200099F862 /* SDWebImageDownloaderOperation.m in Sources */,
@@ -564,6 +581,7 @@
 				CC464DC81F2DF9200099F862 /* MASConstraintMaker.m in Sources */,
 				CC464DD71F2DF9200099F862 /* SDWebImageDownloader.m in Sources */,
 				CC464DCF1F2DF9200099F862 /* ViewController+MASAdditions.m in Sources */,
+				CC9A57C61F30344B005D91DA /* MTLoopInfoContainerView.m in Sources */,
 				CC464DD01F2DF9200099F862 /* MKAnnotationView+WebCache.m in Sources */,
 				CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */,
 				CC9A57BD1F2F808A005D91DA /* MTPOI_SHOP_Model.m in Sources */,

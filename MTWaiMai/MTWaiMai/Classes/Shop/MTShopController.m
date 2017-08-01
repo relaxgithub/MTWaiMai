@@ -66,6 +66,8 @@
         // 给headerView赋值
         _headerView.poi_Shop_Model = _poi_Shop_Model;
 
+        // NSLog(@"%@",_headerView.poi_Shop_Model.discounts);
+
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error) {
@@ -91,7 +93,7 @@
 #pragma mark - 基本设置
 - (void)settingNormal
 {
-    self.view.backgroundColor = [UIColor orangeColor];
+    self.view.backgroundColor = [UIColor whiteColor];
 
     // 设置navigationBar
     // self.bar.backgroundColor = [UIColor redColor];
@@ -145,6 +147,8 @@
 - (void)settingMiddleTagView {
     /// 中部视图
     UIView *middleTagView = [[UIView alloc] init];
+#warning mark - 调试滚动用,等会要注释掉.
+    //middleTagView.alpha = 0.1;
     [self.view addSubview:middleTagView];
     _middleTagView = middleTagView;
 

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+@class MTDiscount2Model;
 
 @interface MTPOI_SHOP_Model : NSObject
 
@@ -21,6 +22,9 @@
 
 /// 店铺公告
 @property (nonatomic,copy) NSString *bulletin;
+
+/// 轮播广告
+@property (nonatomic,strong) NSArray<MTDiscount2Model *> *discounts;
 
 + (instancetype)poi_ShopWithDict:(NSDictionary *)dict;
 
