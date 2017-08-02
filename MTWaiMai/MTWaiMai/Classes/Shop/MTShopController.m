@@ -14,6 +14,8 @@
 #import "MTInfoController.h"
 #import "MTHeaderView.h"
 #import "MTPOI_SHOP_Model.h"
+#import "MTFoodListController.h"
+
 
 
 #define KMaxHeaderViewHeight 180 // 头部视图的最大高度
@@ -215,7 +217,8 @@
 }
 
 #pragma mark - 设置下部的scrollView
-- (void)settingBottomScrollView {
+- (void)settingBottomScrollView
+{
     // 创建scrollview
     UIScrollView *scrollView = [[UIScrollView alloc] init];
     [self.view addSubview:scrollView];
@@ -237,14 +240,17 @@
     }];
 
     // 3个复杂的视图 = 三个控制器
-    MTOrderController *orderVC = [[MTOrderController alloc] init];
+    //MTOrderController *orderVC = [[MTOrderController alloc] init];
+    MTFoodListController *foodList = [[MTFoodListController alloc] init];
     MTCommentController *commentVC = [[MTCommentController alloc] init];
     MTInfoController *infoVC = [[MTInfoController alloc] init];
 
-    NSArray<UIViewController *> *vcArr = @[orderVC,commentVC,infoVC];
+    NSArray<UIViewController *> *vcArr = @[foodList,commentVC,infoVC];
 
-    for (int i = 0; i < vcArr.count; i++) {
-        [scrollView addSubview:vcArr[i].view]; // 当一个视图控制器视图添加到另外一个控制器的仕途上,这个被添加的视图,默认是铺满前一个视图的.
+    for (int i = 0; i < vcArr.count; i++)
+    {
+        // 当一个视图控制器视图添加到另外一个控制器的仕途上,这个被添加的视图,默认是铺满前一个视图的.
+        [scrollView addSubview:vcArr[i].view];
         [vcArr[i] didMoveToParentViewController:self];
     }
 

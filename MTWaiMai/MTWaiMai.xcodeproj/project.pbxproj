@@ -56,6 +56,7 @@
 		CC8CF0071F31E68100D10B2A /* UIView+FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0061F31E68100D10B2A /* UIView+FindController.m */; };
 		CC8CF00A1F31EFD000D10B2A /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0091F31EFD000D10B2A /* UILabel+Addition.m */; };
 		CC8CF00E1F32051500D10B2A /* AnimatorTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF00D1F32051500D10B2A /* AnimatorTransitioningDelegate.m */; };
+		CC8CF0151F3220F500D10B2A /* MTFoodListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0141F3220F500D10B2A /* MTFoodListController.m */; };
 		CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */; };
 		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
@@ -173,6 +174,8 @@
 		CC8CF0091F31EFD000D10B2A /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
 		CC8CF00C1F32051500D10B2A /* AnimatorTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatorTransitioningDelegate.h; sourceTree = "<group>"; };
 		CC8CF00D1F32051500D10B2A /* AnimatorTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatorTransitioningDelegate.m; sourceTree = "<group>"; };
+		CC8CF0131F3220F500D10B2A /* MTFoodListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTFoodListController.h; path = MTWaiMai/Classes/FoodList/MTFoodListController.h; sourceTree = SOURCE_ROOT; };
+		CC8CF0141F3220F500D10B2A /* MTFoodListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTFoodListController.m; path = MTWaiMai/Classes/FoodList/MTFoodListController.m; sourceTree = SOURCE_ROOT; };
 		CC9A57AA1F2F51CE005D91DA /* MTOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderController.h; sourceTree = "<group>"; };
 		CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderController.m; sourceTree = "<group>"; };
 		CC9A57AD1F2F51D9005D91DA /* MTCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommentController.h; sourceTree = "<group>"; };
@@ -252,7 +255,8 @@
 				CC464D651F2DF48B0099F862 /* FoodDetail(食物详情) */,
 				CC9A57A91F2F51A8005D91DA /* Order(点菜) */,
 				CC9A57A31F2F5185005D91DA /* Comment(评论) */,
-				CC9A57A71F2F5185005D91DA /* Info(商家) */,
+				CC8CF00F1F321C3E00D10B2A /* FoodList(商品列表) */,
+				CC9A57A71F2F5185005D91DA /* Info(商家信息) */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -449,6 +453,16 @@
 			path = ViewControllerTransitioningDelegate;
 			sourceTree = "<group>";
 		};
+		CC8CF00F1F321C3E00D10B2A /* FoodList(商品列表) */ = {
+			isa = PBXGroup;
+			children = (
+				CC8CF0131F3220F500D10B2A /* MTFoodListController.h */,
+				CC8CF0141F3220F500D10B2A /* MTFoodListController.m */,
+			);
+			name = "FoodList(商品列表)";
+			path = Info/FoodList;
+			sourceTree = "<group>";
+		};
 		CC9A57A31F2F5185005D91DA /* Comment(评论) */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,13 +473,13 @@
 			path = Comment;
 			sourceTree = "<group>";
 		};
-		CC9A57A71F2F5185005D91DA /* Info(商家) */ = {
+		CC9A57A71F2F5185005D91DA /* Info(商家信息) */ = {
 			isa = PBXGroup;
 			children = (
 				CC9A57B01F2F51E2005D91DA /* MTInfoController.h */,
 				CC9A57B11F2F51E2005D91DA /* MTInfoController.m */,
 			);
-			name = "Info(商家)";
+			name = "Info(商家信息)";
 			path = Info;
 			sourceTree = "<group>";
 		};
@@ -602,6 +616,7 @@
 				CC464DDC1F2DF9200099F862 /* UIImage+GIF.m in Sources */,
 				CC464DD21F2DF9200099F862 /* NSImage+WebCache.m in Sources */,
 				CC464DE51F2DF9C00099F862 /* MTShopController.m in Sources */,
+				CC8CF0151F3220F500D10B2A /* MTFoodListController.m in Sources */,
 				CC464DCD1F2DF9200099F862 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				CC464DDD1F2DF9200099F862 /* UIImage+MultiFormat.m in Sources */,
 				CC464DD61F2DF9200099F862 /* SDWebImageDecoder.m in Sources */,

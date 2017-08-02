@@ -53,7 +53,8 @@ typedef NS_OPTIONS(NSUInteger,AnimatorTransitionType ) {
     // 所有的转场都是一个大范围的视图内的内容发生转场.
     // 获取容器视图
     UIView *containerView = [transitionContext containerView];
-
+    // toView 就是哪个视图需要显示出来.(需要显示在转场的视图上)
+    // fromView 就是哪个视图需要消失.(需要从转场视图上移走)
     // 获取要去的视图,modal的时候,去的view就是商家详情view
     UIView *toView = [transitionContext viewForKey:UITransitionContextToViewKey];
     // 获取来源的视图,modal的时候,商品列表view就是来源视图
@@ -79,13 +80,10 @@ typedef NS_OPTIONS(NSUInteger,AnimatorTransitionType ) {
             // dismiss的时候,from就是商家详情页面
             fromView.transform = CGAffineTransformMakeScale(0.01, 0.01);
 
-
         } completion:^(BOOL finished) {
             [transitionContext completeTransition:YES];
         }];
-        
     }
-
 }
 
 
