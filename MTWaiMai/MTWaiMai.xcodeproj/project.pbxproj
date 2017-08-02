@@ -52,6 +52,7 @@
 		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
 		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
 		CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */; };
+		CC8CEFDE1F315DDB00D10B2A /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CC8CEFDD1F315DDB00D10B2A /* food.json */; };
 		CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */; };
 		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
@@ -162,6 +163,7 @@
 		CC5737DA1F2E2570003F6723 /* category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = category.h; sourceTree = "<group>"; };
 		CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MTNumberAddition.h"; sourceTree = "<group>"; };
 		CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MTNumberAddition.m"; sourceTree = "<group>"; };
+		CC8CEFDD1F315DDB00D10B2A /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
 		CC9A57AA1F2F51CE005D91DA /* MTOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderController.h; sourceTree = "<group>"; };
 		CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderController.m; sourceTree = "<group>"; };
 		CC9A57AD1F2F51D9005D91DA /* MTCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommentController.h; sourceTree = "<group>"; };
@@ -275,6 +277,7 @@
 			children = (
 				CC9A57BA1F2F805E005D91DA /* Model */,
 				CC9A57B31F2F69E8005D91DA /* View */,
+				CC8CEFDC1F315DCB00D10B2A /* Other */,
 				CC464DE31F2DF9C00099F862 /* MTShopController.h */,
 				CC464DE41F2DF9C00099F862 /* MTShopController.m */,
 			);
@@ -414,6 +417,14 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		CC8CEFDC1F315DCB00D10B2A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CC8CEFDD1F315DDB00D10B2A /* food.json */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
 		CC9A57A31F2F5185005D91DA /* Comment(评论) */ = {
 			isa = PBXGroup;
 			children = (
@@ -528,6 +539,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC8CEFDE1F315DDB00D10B2A /* food.json in Resources */,
 				CC464D5A1F2DF3DE0099F862 /* LaunchScreen.storyboard in Resources */,
 				CC464D571F2DF3DE0099F862 /* Assets.xcassets in Resources */,
 			);

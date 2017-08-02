@@ -72,9 +72,6 @@
     // 轮播广告
     _adverLabel.text = discountModel.info;
 
-
-
-
 }
 
 @end

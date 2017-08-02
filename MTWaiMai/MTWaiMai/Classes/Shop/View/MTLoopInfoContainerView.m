@@ -9,6 +9,8 @@
 #import "MTLoopInfoContainerView.h"
 #import "MTLoopInfoView.h"
 
+#define KLoopInfoCount _models.count
+
 @interface MTLoopInfoContainerView ()
 
 @property (nonatomic,weak) MTLoopInfoView *loopInfoView1;
@@ -74,6 +76,7 @@
     _loopInfoView1.discountModel = _models[0];//0
     _loopInfoView2.discountModel = _models[1];//1
 
+    /**
     //    while (true) {
     //
     //        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -95,6 +98,8 @@
     //        });
     //    }
 
+     */
+    
     [self scroll];
 }
 
@@ -102,18 +107,15 @@
 {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 
-        // NSLog(@"%@",[NSThread currentThread]);
-
-
-        _loopInfoView1.discountModel = _models[_index % 7];//0
-        _loopInfoView2.discountModel = _models[++_index % 7];//1
+        _loopInfoView1.discountModel = _models[_index % KLoopInfoCount];//0
+        _loopInfoView2.discountModel = _models[++_index % KLoopInfoCount];//1
 
         [UIView animateWithDuration:1 animations:^{
             _loopInfoView1.transform = CGAffineTransformMakeTranslation(0, -20);
             _loopInfoView2.transform = CGAffineTransformMakeTranslation(0, -20);
         } completion:^(BOOL finished) {
-            _loopInfoView1.discountModel = _models[_index % 7];//1
-            _loopInfoView2.discountModel = _models[++_index % 7];//2
+            _loopInfoView1.discountModel = _models[_index % KLoopInfoCount];//1
+            _loopInfoView2.discountModel = _models[++_index % KLoopInfoCount];//2
             _loopInfoView1.transform = CGAffineTransformIdentity;
             _loopInfoView2.transform = CGAffineTransformIdentity;
             // index = 1

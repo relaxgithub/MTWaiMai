@@ -70,7 +70,7 @@
     // 内存警告处理,基本上就是固定写法.
     if (self.isViewLoaded && self.view.window == nil)
     {
-        // 不在栈顶的控制器,回收期视图view
+        // 不在栈顶的控制器,回收其视图view
         self.view = nil;
     }
 }

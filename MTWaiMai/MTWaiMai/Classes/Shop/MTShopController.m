@@ -16,8 +16,8 @@
 #import "MTPOI_SHOP_Model.h"
 
 
-#define KMaxHeaderViewHeight 180
-#define KMinHeaderViewHeight 64
+#define KMaxHeaderViewHeight 180 // 头部视图的最大高度
+#define KMinHeaderViewHeight 64 // 头部视图的最小高度
 
 @interface MTShopController () <UIScrollViewDelegate>
 
@@ -48,6 +48,7 @@
 
     // 加载店铺数据
     [self loadShopData];
+    // [self loadLoactionData];
 
     [super viewDidLoad];
 
@@ -55,6 +56,26 @@
 }
 
 #pragma mark - 加载店铺数据
+
+
+/**
+ 加载本地数据
+ */
+- (void)loadLoactionData
+{
+    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle]URLForResource:@"food.json" withExtension:nil]];
+    NSDictionary *poi_info_dict = dict[@"data"][@"poi_info"];
+
+    _poi_Shop_Model = [MTPOI_SHOP_Model poi_ShopWithDict:poi_info_dict];
+
+    // 给headerView赋值
+    _headerView.poi_Shop_Model = _poi_Shop_Model;
+}
+
+
+/**
+ 记载网络数据
+ */
 - (void)loadShopData
 {
     [[AFHTTPSessionManager manager] GET:@"https://raw.githubusercontent.com/relaxgithub/webResources/master/food.json" parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, NSDictionary *responseObject) {
@@ -136,7 +157,7 @@
         make.height.offset(180);
     }];
 
-    headerView.backgroundColor = [UIColor redColor];
+    headerView.backgroundColor = [UIColor blackColor];
     // 新添加的头部视图,不要覆盖之前添加的navigationBar
     [self.view insertSubview:self.bar aboveSubview:headerView];
 
