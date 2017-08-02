@@ -153,7 +153,8 @@
 
     // 设置轮播视图
     _loopInfoView.models = poi_Shop_Model.discounts;
-
+    // 间接传给模态控制器
+    _loopInfoView.shopModel = _poi_Shop_Model;
 
 }
 

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-@class MTDiscount2Model;
+@class MTDiscount2Model,MTPOI_SHOP_Model;
 
 @interface MTLoopInfoContainerView : UIView
 
 @property (nonatomic,strong) NSArray<MTDiscount2Model *> *models;
+@property (nonatomic,strong) MTPOI_SHOP_Model *shopModel;
 
 @end

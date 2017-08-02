@@ -8,6 +8,8 @@
 
 #import "MTLoopInfoContainerView.h"
 #import "MTLoopInfoView.h"
+#import "MTInfoController.h"
+#import "AnimatorTransitioningDelegate.h"
 
 #define KLoopInfoCount _models.count
 
@@ -17,6 +19,9 @@
 @property (nonatomic,weak) MTLoopInfoView *loopInfoView2;
 
 @property (nonatomic,assign) int index;
+
+// view 的 modal 转场代理
+@property (nonatomic,strong) AnimatorTransitioningDelegate *animator;
 
 @end
 
@@ -124,6 +129,28 @@
         }];
     });
     
+}
+
+//点击Modal跳转到店铺详情页
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+     // NSLog(@"%s",__func__);//打开模态框,需要拿到当前视图的控制器. self presentViewController = self == ViewController
+
+    MTInfoController *mtInfoVC = [[MTInfoController alloc] init];
+    mtInfoVC.shopModel = _shopModel;
+
+    // 不使用 presentViewController: animated: 默认的转场动画,利用自己的.
+    // modal出自己,但不关闭后面的控制器视图
+    mtInfoVC.modalPresentationStyle = UIModalPresentationCustom;
+
+    // delegate = weak 需要一个strong属性强引用一下
+    _animator = [[AnimatorTransitioningDelegate alloc] init];
+    // 设置自己的转场代理
+    mtInfoVC.transitioningDelegate = _animator;
+    
+
+    [self.viewController presentViewController:mtInfoVC animated:YES completion:nil];
+
 }
 
 

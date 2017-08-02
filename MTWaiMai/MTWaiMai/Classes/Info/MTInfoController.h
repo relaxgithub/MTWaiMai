@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MTPOI_SHOP_Model.h"
+
 
 @interface MTInfoController : UIViewController
+
+@property (nonatomic,strong) MTPOI_SHOP_Model *shopModel;
 
 @end

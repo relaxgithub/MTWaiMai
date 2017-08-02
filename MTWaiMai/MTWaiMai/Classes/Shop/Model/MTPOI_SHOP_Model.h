@@ -26,6 +26,16 @@
 /// 轮播广告
 @property (nonatomic,strong) NSArray<MTDiscount2Model *> *discounts;
 
+/// 配送时间
+@property (nonatomic,copy) NSString *delivery_time_tip;
+
+/// 起送价
+@property (nonatomic,copy) NSString *min_price_tip;
+
+/// 配送费
+@property (nonatomic,copy) NSString *shipping_fee_tip;
+
+
 + (instancetype)poi_ShopWithDict:(NSDictionary *)dict;
 
 @end
