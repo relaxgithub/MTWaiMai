@@ -9,6 +9,7 @@
 #import "MTPOI_SHOP_Model.h"
 #import "MTDiscount2Model.h"
 
+
 @implementation MTPOI_SHOP_Model
 
 + (instancetype)poi_ShopWithDict:(NSDictionary *)dict

@@ -56,6 +56,13 @@
 		CC8CF0071F31E68100D10B2A /* UIView+FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0061F31E68100D10B2A /* UIView+FindController.m */; };
 		CC8CF00A1F31EFD000D10B2A /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0091F31EFD000D10B2A /* UILabel+Addition.m */; };
 		CC8CF00E1F32051500D10B2A /* AnimatorTransitioningDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF00D1F32051500D10B2A /* AnimatorTransitioningDelegate.m */; };
+		CC8CF0181F32222500D10B2A /* MTFoodListController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0171F32222500D10B2A /* MTFoodListController.m */; };
+		CC8CF0211F3225CF00D10B2A /* MTCategoryFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0201F3225CF00D10B2A /* MTCategoryFoodModel.m */; };
+		CC8CF0231F3232F900D10B2A /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CC8CF0221F3232F900D10B2A /* food.json */; };
+		CC8CF0291F32351F00D10B2A /* MTCategoryFoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0281F32351F00D10B2A /* MTCategoryFoodCell.m */; };
+		CC8CF02C1F32A70300D10B2A /* MTFoodModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF02B1F32A70300D10B2A /* MTFoodModel.m */; };
+		CC8CF02F1F32DA7300D10B2A /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF02E1F32DA7300D10B2A /* UIColor+Addition.m */; };
+		CC8CF0361F32E41F00D10B2A /* MTFoodCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0341F32E41F00D10B2A /* MTFoodCell.m */; };
 		CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */; };
 		CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57AE1F2F51D9005D91DA /* MTCommentController.m */; };
 		CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57B11F2F51E2005D91DA /* MTInfoController.m */; };
@@ -65,6 +72,8 @@
 		CC9A57C01F3027FC005D91DA /* MTDiscount2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57BF1F3027FC005D91DA /* MTDiscount2Model.m */; };
 		CC9A57C31F302A95005D91DA /* MTLoopInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */; };
 		CC9A57C61F30344B005D91DA /* MTLoopInfoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */; };
+		CCA0E5F01F333A7A000C2E0B /* MTFoodListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA0E5EF1F333A7A000C2E0B /* MTFoodListSectionHeaderView.m */; };
+		CCA0E5F31F333CBD000C2E0B /* MTOrderCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA0E5F21F333CBD000C2E0B /* MTOrderCountView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -173,6 +182,19 @@
 		CC8CF0091F31EFD000D10B2A /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
 		CC8CF00C1F32051500D10B2A /* AnimatorTransitioningDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatorTransitioningDelegate.h; sourceTree = "<group>"; };
 		CC8CF00D1F32051500D10B2A /* AnimatorTransitioningDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatorTransitioningDelegate.m; sourceTree = "<group>"; };
+		CC8CF0161F32222500D10B2A /* MTFoodListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTFoodListController.h; path = MTWaiMai/Classes/FoodList/MTFoodListController.h; sourceTree = SOURCE_ROOT; };
+		CC8CF0171F32222500D10B2A /* MTFoodListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTFoodListController.m; path = MTWaiMai/Classes/FoodList/MTFoodListController.m; sourceTree = SOURCE_ROOT; };
+		CC8CF01F1F3225CF00D10B2A /* MTCategoryFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCategoryFoodModel.h; sourceTree = "<group>"; };
+		CC8CF0201F3225CF00D10B2A /* MTCategoryFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCategoryFoodModel.m; sourceTree = "<group>"; };
+		CC8CF0221F3232F900D10B2A /* food.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = food.json; sourceTree = "<group>"; };
+		CC8CF0271F32351F00D10B2A /* MTCategoryFoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTCategoryFoodCell.h; path = MTWaiMai/Classes/Shop/Model/MTCategoryFoodCell.h; sourceTree = SOURCE_ROOT; };
+		CC8CF0281F32351F00D10B2A /* MTCategoryFoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTCategoryFoodCell.m; path = MTWaiMai/Classes/Shop/Model/MTCategoryFoodCell.m; sourceTree = SOURCE_ROOT; };
+		CC8CF02A1F32A70300D10B2A /* MTFoodModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodModel.h; sourceTree = "<group>"; };
+		CC8CF02B1F32A70300D10B2A /* MTFoodModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodModel.m; sourceTree = "<group>"; };
+		CC8CF02D1F32DA7300D10B2A /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		CC8CF02E1F32DA7300D10B2A /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		CC8CF0331F32E41F00D10B2A /* MTFoodCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MTFoodCell.h; path = MTWaiMai/Common/MTFoodCell.h; sourceTree = SOURCE_ROOT; };
+		CC8CF0341F32E41F00D10B2A /* MTFoodCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MTFoodCell.m; path = MTWaiMai/Common/MTFoodCell.m; sourceTree = SOURCE_ROOT; };
 		CC9A57AA1F2F51CE005D91DA /* MTOrderController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderController.h; sourceTree = "<group>"; };
 		CC9A57AB1F2F51CE005D91DA /* MTOrderController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderController.m; sourceTree = "<group>"; };
 		CC9A57AD1F2F51D9005D91DA /* MTCommentController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCommentController.h; sourceTree = "<group>"; };
@@ -191,6 +213,10 @@
 		CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLoopInfoView.m; sourceTree = "<group>"; };
 		CC9A57C41F30344B005D91DA /* MTLoopInfoContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTLoopInfoContainerView.h; sourceTree = "<group>"; };
 		CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTLoopInfoContainerView.m; sourceTree = "<group>"; };
+		CCA0E5EE1F333A7A000C2E0B /* MTFoodListSectionHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodListSectionHeaderView.h; sourceTree = "<group>"; };
+		CCA0E5EF1F333A7A000C2E0B /* MTFoodListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodListSectionHeaderView.m; sourceTree = "<group>"; };
+		CCA0E5F11F333CBD000C2E0B /* MTOrderCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderCountView.h; sourceTree = "<group>"; };
+		CCA0E5F21F333CBD000C2E0B /* MTOrderCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderCountView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +261,7 @@
 		CC464D4A1F2DF3DE0099F862 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CC8CF0221F3232F900D10B2A /* food.json */,
 				CC464D561F2DF3DE0099F862 /* Assets.xcassets */,
 				CC464D581F2DF3DE0099F862 /* LaunchScreen.storyboard */,
 				CC464D5B1F2DF3DE0099F862 /* Info.plist */,
@@ -299,6 +326,8 @@
 			isa = PBXGroup;
 			children = (
 				CC5737DA1F2E2570003F6723 /* category.h */,
+				CC8CF02D1F32DA7300D10B2A /* UIColor+Addition.h */,
+				CC8CF02E1F32DA7300D10B2A /* UIColor+Addition.m */,
 				CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */,
 				CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */,
 				CC9A57B71F2F7AE9005D91DA /* UIImage+DashLine.h */,
@@ -453,6 +482,10 @@
 		CC8CF00F1F321C3E00D10B2A /* FoodList(商品列表) */ = {
 			isa = PBXGroup;
 			children = (
+				CCA0E5EA1F333A54000C2E0B /* Controller */,
+				CCA0E5EB1F333A54000C2E0B /* Model */,
+				CCA0E5EC1F333A54000C2E0B /* Other */,
+				CCA0E5ED1F333A54000C2E0B /* View */,
 			);
 			name = "FoodList(商品列表)";
 			path = Info/FoodList;
@@ -508,9 +541,55 @@
 				CC9A57BC1F2F808A005D91DA /* MTPOI_SHOP_Model.m */,
 				CC9A57BE1F3027FC005D91DA /* MTDiscount2Model.h */,
 				CC9A57BF1F3027FC005D91DA /* MTDiscount2Model.m */,
+				CC8CF01F1F3225CF00D10B2A /* MTCategoryFoodModel.h */,
+				CC8CF0201F3225CF00D10B2A /* MTCategoryFoodModel.m */,
+				CC8CF02A1F32A70300D10B2A /* MTFoodModel.h */,
+				CC8CF02B1F32A70300D10B2A /* MTFoodModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
+		};
+		CCA0E5EA1F333A54000C2E0B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CC8CF0161F32222500D10B2A /* MTFoodListController.h */,
+				CC8CF0171F32222500D10B2A /* MTFoodListController.m */,
+			);
+			name = Controller;
+			path = MTWaiMai/Classes/FoodList/Controller;
+			sourceTree = SOURCE_ROOT;
+		};
+		CCA0E5EB1F333A54000C2E0B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			path = MTWaiMai/Classes/FoodList/Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		CCA0E5EC1F333A54000C2E0B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Other;
+			path = MTWaiMai/Classes/FoodList/Other;
+			sourceTree = SOURCE_ROOT;
+		};
+		CCA0E5ED1F333A54000C2E0B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC8CF0271F32351F00D10B2A /* MTCategoryFoodCell.h */,
+				CC8CF0281F32351F00D10B2A /* MTCategoryFoodCell.m */,
+				CC8CF0331F32E41F00D10B2A /* MTFoodCell.h */,
+				CC8CF0341F32E41F00D10B2A /* MTFoodCell.m */,
+				CCA0E5EE1F333A7A000C2E0B /* MTFoodListSectionHeaderView.h */,
+				CCA0E5EF1F333A7A000C2E0B /* MTFoodListSectionHeaderView.m */,
+				CCA0E5F11F333CBD000C2E0B /* MTOrderCountView.h */,
+				CCA0E5F21F333CBD000C2E0B /* MTOrderCountView.m */,
+			);
+			name = View;
+			path = MTWaiMai/Classes/FoodList/View;
+			sourceTree = SOURCE_ROOT;
 		};
 /* End PBXGroup section */
 
@@ -573,6 +652,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8CEFDE1F315DDB00D10B2A /* food.json in Resources */,
+				CC8CF0231F3232F900D10B2A /* food.json in Resources */,
 				CC464D5A1F2DF3DE0099F862 /* LaunchScreen.storyboard in Resources */,
 				CC464D571F2DF3DE0099F862 /* Assets.xcassets in Resources */,
 			);
@@ -594,9 +674,11 @@
 				CC464DD51F2DF9200099F862 /* SDWebImageCompat.m in Sources */,
 				CC464DDA1F2DF9200099F862 /* SDWebImagePrefetcher.m in Sources */,
 				CC464DC51F2DF9200099F862 /* AFURLSessionManager.m in Sources */,
+				CC8CF02F1F32DA7300D10B2A /* UIColor+Addition.m in Sources */,
 				CC464DCC1F2DF9200099F862 /* NSArray+MASAdditions.m in Sources */,
 				CC464DC21F2DF9200099F862 /* AFSecurityPolicy.m in Sources */,
 				CC464DDB1F2DF9200099F862 /* UIButton+WebCache.m in Sources */,
+				CC8CF0291F32351F00D10B2A /* MTCategoryFoodCell.m in Sources */,
 				CC464D4C1F2DF3DE0099F862 /* main.m in Sources */,
 				CC464DCE1F2DF9200099F862 /* View+MASAdditions.m in Sources */,
 				CC8CF0071F31E68100D10B2A /* UIView+FindController.m in Sources */,
@@ -611,6 +693,8 @@
 				CC464DDC1F2DF9200099F862 /* UIImage+GIF.m in Sources */,
 				CC464DD21F2DF9200099F862 /* NSImage+WebCache.m in Sources */,
 				CC464DE51F2DF9C00099F862 /* MTShopController.m in Sources */,
+				CC8CF0211F3225CF00D10B2A /* MTCategoryFoodModel.m in Sources */,
+				CC8CF0181F32222500D10B2A /* MTFoodListController.m in Sources */,
 				CC464DCD1F2DF9200099F862 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				CC464DDD1F2DF9200099F862 /* UIImage+MultiFormat.m in Sources */,
 				CC464DD61F2DF9200099F862 /* SDWebImageDecoder.m in Sources */,
@@ -620,9 +704,12 @@
 				CC9A57C31F302A95005D91DA /* MTLoopInfoView.m in Sources */,
 				CC464DD11F2DF9200099F862 /* NSData+ImageContentType.m in Sources */,
 				CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */,
+				CCA0E5F31F333CBD000C2E0B /* MTOrderCountView.m in Sources */,
 				CC464DD81F2DF9200099F862 /* SDWebImageDownloaderOperation.m in Sources */,
 				CC464DC31F2DF9200099F862 /* AFURLRequestSerialization.m in Sources */,
+				CC8CF02C1F32A70300D10B2A /* MTFoodModel.m in Sources */,
 				CC464DD41F2DF9200099F862 /* SDImageCacheConfig.m in Sources */,
+				CC8CF0361F32E41F00D10B2A /* MTFoodCell.m in Sources */,
 				CC464DC11F2DF9200099F862 /* AFNetworkReachabilityManager.m in Sources */,
 				CC464DC41F2DF9200099F862 /* AFURLResponseSerialization.m in Sources */,
 				CC464DC81F2DF9200099F862 /* MASConstraintMaker.m in Sources */,
@@ -631,6 +718,7 @@
 				CC9A57C61F30344B005D91DA /* MTLoopInfoContainerView.m in Sources */,
 				CC464DD01F2DF9200099F862 /* MKAnnotationView+WebCache.m in Sources */,
 				CC8CF00A1F31EFD000D10B2A /* UILabel+Addition.m in Sources */,
+				CCA0E5F01F333A7A000C2E0B /* MTFoodListSectionHeaderView.m in Sources */,
 				CC9A57B61F2F69FB005D91DA /* MTHeaderView.m in Sources */,
 				CC9A57BD1F2F808A005D91DA /* MTPOI_SHOP_Model.m in Sources */,
 				CC464DCB1F2DF9200099F862 /* MASViewConstraint.m in Sources */,

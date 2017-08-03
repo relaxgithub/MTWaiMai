@@ -35,7 +35,6 @@
 /// 配送费
 @property (nonatomic,copy) NSString *shipping_fee_tip;
 
-
 + (instancetype)poi_ShopWithDict:(NSDictionary *)dict;
 
 @end

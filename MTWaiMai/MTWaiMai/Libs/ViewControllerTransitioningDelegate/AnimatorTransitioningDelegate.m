@@ -25,7 +25,7 @@ typedef NS_OPTIONS(NSUInteger,AnimatorTransitionType ) {
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented presentingController:(UIViewController *)presenting sourceController:(UIViewController *)source
 {
     // modal显示的时候执行此方法
-    NSLog(@"%@",@"modal打开了");
+    // NSLog(@"%@",@"modal打开了");
     _transitionType = AnimatorTransitionTypeModal;
 
     return self;
@@ -33,7 +33,7 @@ typedef NS_OPTIONS(NSUInteger,AnimatorTransitionType ) {
 
 - (nullable id <UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed
 {
-    NSLog(@"%@",@"modal关闭了");
+    // NSLog(@"%@",@"modal关闭了");
     _transitionType = AnimatorTransitionTypeDismiss;
 
     return self;

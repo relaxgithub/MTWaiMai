@@ -15,6 +15,7 @@
 #import "MTHeaderView.h"
 #import "MTPOI_SHOP_Model.h"
 #import "MTFoodListController.h"
+#import "MTCategoryFoodModel.h"
 
 
 
@@ -38,6 +39,15 @@
 /// 头部视图需要用到的model
 @property (nonatomic,strong) MTPOI_SHOP_Model *poi_Shop_Model;
 
+/// 保存视频分类数据
+@property (nonatomic,strong) NSArray<MTCategoryFoodModel *> *categoryFoodData;
+
+@property (nonatomic,assign,getter=isDataDown) BOOL dataDown;
+
+
+@property (nonatomic,strong) MTFoodListController *foodListController;
+
+
 @end
 
 @implementation MTShopController
@@ -49,8 +59,8 @@
     // [self settingShopHeader];
 
     // 加载店铺数据
-    [self loadShopData];
-    // [self loadLoactionData];
+    // [self loadShopData];
+    [self loadLoactionData];
 
     [super viewDidLoad];
 
@@ -65,13 +75,29 @@
  */
 - (void)loadLoactionData
 {
-    NSDictionary *dict = [NSDictionary dictionaryWithContentsOfURL:[[NSBundle mainBundle]URLForResource:@"food.json" withExtension:nil]];
+    // json 文件读取的第一步,先去读data数据 ********
+    NSData *data = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] URLForResource:@"food.json" withExtension:nil]];
+
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+   //  NSDictionary *poi_info_dict = dict[@"data"][@"poi_info"];
+
     NSDictionary *poi_info_dict = dict[@"data"][@"poi_info"];
 
     _poi_Shop_Model = [MTPOI_SHOP_Model poi_ShopWithDict:poi_info_dict];
 
     // 给headerView赋值
     _headerView.poi_Shop_Model = _poi_Shop_Model;
+
+    // 获得视频分类数据
+    NSArray *foodCategoryArr = dict[@"data"][@"food_spu_tags"];
+    NSMutableArray<MTCategoryFoodModel *> *categoryArrM = [NSMutableArray arrayWithCapacity:foodCategoryArr.count];
+    for (NSDictionary *dict in foodCategoryArr)
+    {
+        MTCategoryFoodModel *foodCategoryModel = [MTCategoryFoodModel categoryFoodWithDict:dict];
+        [categoryArrM addObject:foodCategoryModel];
+    }
+    // 把食物分类数据传递给属性保存
+    _categoryFoodData = categoryArrM.copy;
 }
 
 
@@ -89,8 +115,19 @@
         // 给headerView赋值
         _headerView.poi_Shop_Model = _poi_Shop_Model;
 
-        // NSLog(@"%@",_headerView.poi_Shop_Model.discounts);
+        // 获得视频分类数据
+        NSArray *foodCategoryArr = responseObject[@"data"][@"food_spu_tags"];
+        NSMutableArray<MTCategoryFoodModel *> *categoryArrM = [NSMutableArray arrayWithCapacity:foodCategoryArr.count];
+        for (NSDictionary *dict in foodCategoryArr)
+        {
+            MTCategoryFoodModel *foodCategoryModel = [MTCategoryFoodModel categoryFoodWithDict:dict];
+            [categoryArrM addObject:foodCategoryModel];
+        }
+        // 把食物分类数据传递给属性保存
+        _categoryFoodData = categoryArrM.copy;
+        // NSLog(@"%@",_categoryFoodData);
 
+        _dataDown = YES;//数据下载完成标记
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error) {
@@ -150,9 +187,11 @@
 #pragma mark - 设置头部
 - (void)settingShopHeader
 {
-    MTHeaderView *headerView = [[MTHeaderView alloc] init];
+    MTHeaderView *headerView = [[MTHeaderView alloc] init];//setupUI
     [self.view addSubview:headerView];
     _headerView = headerView;
+    // 给headerView赋值
+    _headerView.poi_Shop_Model = _poi_Shop_Model;
 
     [headerView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.top.right.offset(0);
@@ -162,8 +201,6 @@
     headerView.backgroundColor = [UIColor blackColor];
     // 新添加的头部视图,不要覆盖之前添加的navigationBar
     [self.view insertSubview:self.bar aboveSubview:headerView];
-
-
 }
 
 #pragma mark - 设置中部视图
@@ -242,14 +279,19 @@
     // 3个复杂的视图 = 三个控制器
     //MTOrderController *orderVC = [[MTOrderController alloc] init];
     MTFoodListController *foodList = [[MTFoodListController alloc] init];
+    // _foodListController = foodList; // 用一个属性强引用,也行.不一定非要建立父子控制器的关系.
+    // 给食物列表控制器传递数据
+    foodList.categoryFoodData = _categoryFoodData;
     MTCommentController *commentVC = [[MTCommentController alloc] init];
     MTInfoController *infoVC = [[MTInfoController alloc] init];
+    infoVC.shopModel = _poi_Shop_Model;
 
     NSArray<UIViewController *> *vcArr = @[foodList,commentVC,infoVC];
 
     for (int i = 0; i < vcArr.count; i++)
     {
-        // 当一个视图控制器视图添加到另外一个控制器的仕途上,这个被添加的视图,默认是铺满前一个视图的.
+        // 当一个视图控制器视图添加到另外一个控制器的视图上,这个被添加的视图,默认是铺满前一个视图的.
+        [self addChildViewController:vcArr[i]]; ////******* 忘记了建立父子控制器的关系 *********/
         [scrollView addSubview:vcArr[i].view];
         [vcArr[i] didMoveToParentViewController:self];
     }

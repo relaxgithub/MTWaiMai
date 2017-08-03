@@ -10,3 +10,4 @@
 #import "UIImage+DashLine.h" // 绘图虚线 长度4 高度1
 #import "UIView+FindController.h" // 找到根控制器
 #import "UILabel+Addition.h" // 创建UILabel
+#import "UIColor+Addition.h" // 颜色设置相关

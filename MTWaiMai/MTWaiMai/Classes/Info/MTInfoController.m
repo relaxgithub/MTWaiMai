@@ -43,6 +43,7 @@
     [self setupUI];
 }
 
+
 #pragma mark - 设置UI
 - (void)setupUI
 {
@@ -88,7 +89,7 @@
     [contentView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
         make.width.equalTo(scrollView).offset(0);
-        // make.height.offset(1000);
+        make.height.offset(1000);
 
         //        make.left.top.offset(0);
         //        make.width.offset(0);
