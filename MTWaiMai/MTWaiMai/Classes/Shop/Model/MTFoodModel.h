@@ -31,6 +31,12 @@
 /// 用户点餐数量
 @property (nonatomic,assign) NSInteger count;
 
+/// 点赞数
+@property (nonatomic,assign) CGFloat praise_num;
+
+/// 踩数
+@property (nonatomic,assign) CGFloat tread_num;
+
 + (instancetype)foodWithDict:(NSDictionary *)dict;
 
 @end

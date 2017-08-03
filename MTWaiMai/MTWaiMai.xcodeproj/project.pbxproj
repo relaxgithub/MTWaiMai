@@ -47,7 +47,6 @@
 		CC464DE11F2DF9200099F862 /* UIView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DBD1F2DF9200099F862 /* UIView+WebCache.m */; };
 		CC464DE21F2DF9200099F862 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DBF1F2DF9200099F862 /* UIView+WebCacheOperation.m */; };
 		CC464DE51F2DF9C00099F862 /* MTShopController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DE41F2DF9C00099F862 /* MTShopController.m */; };
-		CC464DE81F2DF9CC0099F862 /* MTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DE71F2DF9CC0099F862 /* MTFoodDetailController.m */; };
 		CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DEA1F2DFB250099F862 /* MTNavigationController.m */; };
 		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
 		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
@@ -74,6 +73,9 @@
 		CC9A57C61F30344B005D91DA /* MTLoopInfoContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */; };
 		CCA0E5F01F333A7A000C2E0B /* MTFoodListSectionHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA0E5EF1F333A7A000C2E0B /* MTFoodListSectionHeaderView.m */; };
 		CCA0E5F31F333CBD000C2E0B /* MTOrderCountView.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA0E5F21F333CBD000C2E0B /* MTOrderCountView.m */; };
+		CCE626681F3387210034CE16 /* MTFoodDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE626671F3387210034CE16 /* MTFoodDetailController.m */; };
+		CCE6266E1F3388040034CE16 /* MTFoodDetailFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE6266D1F3388040034CE16 /* MTFoodDetailFlowLayout.m */; };
+		CCE626711F3389550034CE16 /* MTFoodDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE626701F3389550034CE16 /* MTFoodDetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -164,8 +166,6 @@
 		CC464DBF1F2DF9200099F862 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		CC464DE31F2DF9C00099F862 /* MTShopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopController.h; sourceTree = "<group>"; };
 		CC464DE41F2DF9C00099F862 /* MTShopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopController.m; sourceTree = "<group>"; };
-		CC464DE61F2DF9CC0099F862 /* MTFoodDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetailController.h; sourceTree = "<group>"; };
-		CC464DE71F2DF9CC0099F862 /* MTFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailController.m; sourceTree = "<group>"; };
 		CC464DE91F2DFB250099F862 /* MTNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationController.h; sourceTree = "<group>"; };
 		CC464DEA1F2DFB250099F862 /* MTNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationController.m; sourceTree = "<group>"; };
 		CC464DEC1F2DFC860099F862 /* MTNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTNavigationBar.h; sourceTree = "<group>"; };
@@ -217,6 +217,12 @@
 		CCA0E5EF1F333A7A000C2E0B /* MTFoodListSectionHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodListSectionHeaderView.m; sourceTree = "<group>"; };
 		CCA0E5F11F333CBD000C2E0B /* MTOrderCountView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTOrderCountView.h; sourceTree = "<group>"; };
 		CCA0E5F21F333CBD000C2E0B /* MTOrderCountView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTOrderCountView.m; sourceTree = "<group>"; };
+		CCE626661F3387210034CE16 /* MTFoodDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetailController.h; sourceTree = "<group>"; };
+		CCE626671F3387210034CE16 /* MTFoodDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailController.m; sourceTree = "<group>"; };
+		CCE6266C1F3388040034CE16 /* MTFoodDetailFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetailFlowLayout.h; sourceTree = "<group>"; };
+		CCE6266D1F3388040034CE16 /* MTFoodDetailFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailFlowLayout.m; sourceTree = "<group>"; };
+		CCE6266F1F3389550034CE16 /* MTFoodDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTFoodDetailCell.h; sourceTree = "<group>"; };
+		CCE626701F3389550034CE16 /* MTFoodDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTFoodDetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -288,8 +294,10 @@
 		CC464D651F2DF48B0099F862 /* FoodDetail(食物详情) */ = {
 			isa = PBXGroup;
 			children = (
-				CC464DE61F2DF9CC0099F862 /* MTFoodDetailController.h */,
-				CC464DE71F2DF9CC0099F862 /* MTFoodDetailController.m */,
+				CCE626691F3387510034CE16 /* Model */,
+				CCE6266A1F3387510034CE16 /* Other */,
+				CCE6266B1F3387510034CE16 /* View */,
+				CCE626651F3387210034CE16 /* Controller */,
 			);
 			name = "FoodDetail(食物详情)";
 			path = FoodDetail;
@@ -591,6 +599,40 @@
 			path = MTWaiMai/Classes/FoodList/View;
 			sourceTree = SOURCE_ROOT;
 		};
+		CCE626651F3387210034CE16 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				CCE626661F3387210034CE16 /* MTFoodDetailController.h */,
+				CCE626671F3387210034CE16 /* MTFoodDetailController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		CCE626691F3387510034CE16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CCE6266A1F3387510034CE16 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				CCE6266C1F3388040034CE16 /* MTFoodDetailFlowLayout.h */,
+				CCE6266D1F3388040034CE16 /* MTFoodDetailFlowLayout.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		CCE6266B1F3387510034CE16 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CCE6266F1F3389550034CE16 /* MTFoodDetailCell.h */,
+				CCE626701F3389550034CE16 /* MTFoodDetailCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -670,6 +712,7 @@
 				CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */,
 				CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */,
 				CC464DD91F2DF9200099F862 /* SDWebImageManager.m in Sources */,
+				CCE6266E1F3388040034CE16 /* MTFoodDetailFlowLayout.m in Sources */,
 				CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */,
 				CC464DD51F2DF9200099F862 /* SDWebImageCompat.m in Sources */,
 				CC464DDA1F2DF9200099F862 /* SDWebImagePrefetcher.m in Sources */,
@@ -684,6 +727,7 @@
 				CC8CF0071F31E68100D10B2A /* UIView+FindController.m in Sources */,
 				CC464DDE1F2DF9200099F862 /* UIImage+WebP.m in Sources */,
 				CC9A57AC1F2F51CE005D91DA /* MTOrderController.m in Sources */,
+				CCE626681F3387210034CE16 /* MTFoodDetailController.m in Sources */,
 				CC464DC91F2DF9200099F862 /* MASLayoutConstraint.m in Sources */,
 				CC8CF00E1F32051500D10B2A /* AnimatorTransitioningDelegate.m in Sources */,
 				CC9A57B91F2F7AE9005D91DA /* UIImage+DashLine.m in Sources */,
@@ -702,6 +746,7 @@
 				CC9A57C01F3027FC005D91DA /* MTDiscount2Model.m in Sources */,
 				CC464DC61F2DF9200099F862 /* MASCompositeConstraint.m in Sources */,
 				CC9A57C31F302A95005D91DA /* MTLoopInfoView.m in Sources */,
+				CCE626711F3389550034CE16 /* MTFoodDetailCell.m in Sources */,
 				CC464DD11F2DF9200099F862 /* NSData+ImageContentType.m in Sources */,
 				CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */,
 				CCA0E5F31F333CBD000C2E0B /* MTOrderCountView.m in Sources */,
@@ -727,7 +772,6 @@
 				CC464D6E1F2DF4A60099F862 /* AppDelegate.m in Sources */,
 				CC464DCA1F2DF9200099F862 /* MASViewAttribute.m in Sources */,
 				CC9A57AF1F2F51D9005D91DA /* MTCommentController.m in Sources */,
-				CC464DE81F2DF9CC0099F862 /* MTFoodDetailController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

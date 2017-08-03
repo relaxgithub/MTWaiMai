@@ -7,7 +7,12 @@
 //
 
 #import "MTBaseController.h"
+@class MTFoodModel,MTCategoryFoodModel;
 
 @interface MTFoodDetailController : MTBaseController
+
+@property (nonatomic,strong) NSIndexPath *scrollToIndexPath;
+
+@property (nonatomic,strong) NSArray<MTCategoryFoodModel *> *categoryFoodData;
 
 @end

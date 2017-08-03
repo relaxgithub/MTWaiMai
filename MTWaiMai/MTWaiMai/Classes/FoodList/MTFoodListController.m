@@ -40,25 +40,23 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     // 设置界面
     [self setupUI];
-
 }
 
 
 - (void)setupUI
 {
-       // 设置食品分类表格
+    // 设置食品分类表格
     [self settingCategoryFoodTableView];
 
     // 设置分类里的视频表格
     [self settingFoodTableView];
 
     // 用一个nstimer 把_categoryData强引用住
-//    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-//        _categoryFoodData;
-//    }];
+    //    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+    //        _categoryFoodData;
+    //    }];
 }
 
 #pragma mark - 设置网络数据,并激活tableview的reloadData
@@ -97,8 +95,8 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
     [categoryFoodTableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
 
 
-//    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkData)];
-//    [categoryFoodTableView addGestureRecognizer:tap];
+    //    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(checkData)];
+    //    [categoryFoodTableView addGestureRecognizer:tap];
 }
 
 //- (void)checkData
@@ -196,6 +194,17 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         // 并跳转到食物详情页面
         MTFoodDetailController *detailVC = [[MTFoodDetailController alloc] init];
+        // detailVC.view;
+        //        dispatch_async(dispatch_get_main_queue(), ^{
+        //
+        //            detailVC.foodModel = _categoryFoodData[indexPath.section].spus[indexPath.row];
+        //        });
+//        detailVC.foodModel = _categoryFoodData[indexPath.section].spus[indexPath.row];
+
+        // 传递数据
+        detailVC.categoryFoodData = _categoryFoodData;
+        // 滚到目标indexPath
+        detailVC.scrollToIndexPath = indexPath;
 
         [self.navigationController pushViewController:detailVC animated:YES];
     }
@@ -223,7 +232,7 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
         NSIndexPath *firstIndexPath = visiableIndexPath.firstObject;
         // 第一个indexPath 在第几组,就是左边显示的第几个cell
         NSIndexPath *leftCellSelectedIndexPath = [NSIndexPath indexPathForRow:firstIndexPath.section inSection:0];
-
+        
         [_categoryFoodTableView selectRowAtIndexPath:leftCellSelectedIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
     }
 }
