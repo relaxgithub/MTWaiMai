@@ -24,7 +24,10 @@
 @property (nonatomic,weak) UILabel *percentageLabel;
 /// 好评率进度条
 @property (nonatomic,weak) UIProgressView *progressView;
-
+/// 商品信息描述
+@property (nonatomic,weak) UILabel *foodInfoLabel;
+/// 商品评价
+@property (nonatomic,weak) UILabel *evaluationLabel;
 @property (nonatomic,strong) UIScrollView *scrollView;
 
 @end
@@ -124,6 +127,8 @@
     // 6.商品信息
     UILabel *foodInfoLabel = [UILabel makeLabelWithFontSize:14 fontColor:[UIColor darkGrayColor] text:@"商品信息"];
     [contentView addSubview:foodInfoLabel];
+    _foodInfoLabel = foodInfoLabel;
+
 
     [foodInfoLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(8);
@@ -145,6 +150,7 @@
     // 8.商品评价
     UILabel *evaluationLabel = [UILabel makeLabelWithFontSize:14 fontColor:[UIColor darkGrayColor] text:@"商品评价"];
     [contentView addSubview:evaluationLabel];
+    _evaluationLabel = evaluationLabel;
 
     [evaluationLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.offset(8);
@@ -235,7 +241,26 @@
     // 单价
     _min_priceLabel.text = [@"¥ " stringByAppendingString:foodModel.min_price.description];
     // 商品描述
-    _descLabel.text = foodModel.desc;
+    // _descLabel.text = foodModel.desc;
+    _descLabel.text = [foodModel.desc stringByReplacingOccurrencesOfString:@" " withString:@""];
+    if ([_descLabel.text isEqualToString:@""] || _descLabel.text == nil)
+    {
+        _foodInfoLabel.hidden = YES;
+        [_evaluationLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            // 换了约束对象,就不是更新约束了?
+            // make.top.equalTo(_min_priceLabel.mas_bottom).offset(16);
+            make.top.equalTo(_descLabel.mas_bottom).offset(-24);
+        }];
+
+
+    }
+    else
+    {
+        _foodInfoLabel.hidden = NO;
+        [_evaluationLabel mas_updateConstraints:^(MASConstraintMaker *make) {
+            make.top.equalTo(_descLabel.mas_bottom).offset(8);
+        }];
+    }
     // 配图
     [_pictureView sd_setImageWithURL:[NSURL URLWithString:[foodModel.picture stringByDeletingPathExtension]]];
     // 计算比例

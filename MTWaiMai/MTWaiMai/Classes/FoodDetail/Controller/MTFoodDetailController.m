@@ -28,7 +28,8 @@ static NSString *foodDetailCellID = @"foodDetailCellID";
 #pragma mark - 视图生命周期事件
 - (void)viewDidLoad
 {
-
+    // 不要盖住自定义的navigationBar
+    [self setupUI];
 
     [super viewDidLoad];
 
@@ -43,8 +44,7 @@ static NSString *foodDetailCellID = @"foodDetailCellID";
     // 关闭navi & tab 的 inset
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-    // 设置UI
-    [self setupUI];
+
 
 
 
