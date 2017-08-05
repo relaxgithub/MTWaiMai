@@ -28,6 +28,7 @@
 @property (nonatomic,weak) UILabel *foodInfoLabel;
 /// 商品评价
 @property (nonatomic,weak) UILabel *evaluationLabel;
+/// 滚动视图
 @property (nonatomic,strong) UIScrollView *scrollView;
 
 @end
@@ -50,6 +51,7 @@
     [self setupUI];
 }
 
+///
 - (void)setupUI
 {
     // 1.因为可以上下滚动 == scrollView
@@ -60,8 +62,10 @@
         make.edges.offset(0);
     }];
 
-    // 打开垂直弹簧效果
+    // 打开垂直弹簧效果 & 不管contentSize 是否满足此方向的滚动
     scrollView.alwaysBounceVertical = YES;
+    // 打开水平弹簧效果 & 不管contentSize 是否满足此方向的滚动
+    // scrollView.alwaysBounceHorizontal = YES;
 
     [scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.offset(0);
@@ -84,7 +88,10 @@
 
     //http://p1.meituan.net/xianfu/d36a62f1130c63ffa5a61c9cfd2be9f0212992.jpg"
     [imgView sd_setImageWithURL:[NSURL URLWithString:@"http://p1.meituan.net/xianfu/d36a62f1130c63ffa5a61c9cfd2be9f0212992.jpg"]];
+
+    /// 设置图片的填充模式
     imgView.contentMode = UIViewContentModeScaleAspectFill;
+    /// 超出范围的裁剪的
     imgView.clipsToBounds = YES;
 
     [imgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -239,7 +246,7 @@
     // 月售
     _month_saled_contentLabel.text = foodModel.month_saled_content;
     // 单价
-    _min_priceLabel.text = [@"¥ " stringByAppendingString:foodModel.min_price.description];
+    _min_priceLabel.text = [@"¥ " stringByAppendingFormat:@"%.1f",[foodModel.min_price floatValue]];
     // 商品描述
     // _descLabel.text = foodModel.desc;
     _descLabel.text = [foodModel.desc stringByReplacingOccurrencesOfString:@" " withString:@""];
