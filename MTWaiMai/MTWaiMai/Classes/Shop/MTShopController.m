@@ -56,12 +56,13 @@
     // [self settingShopHeader];
 
     // 加载店铺数据
+    [self loadShopData];
     // [self loadShopData];
-    [self loadLoactionData];
+    // [self loadLoactionData];
 
     [super viewDidLoad];
 
-    [self setupUI];
+    // [self setupUI];
 }
 
 /// 手势共存
@@ -128,6 +129,9 @@
         // NSLog(@"%@",_categoryFoodData);
 
         _dataDown = YES;//数据下载完成标记
+
+        // 加载完毕之后,在设置UI创建
+        [self setupUI];
 
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (error) {
