@@ -26,8 +26,6 @@
 /// 价格
 @property (nonatomic,weak) UILabel *min_priceLabel;
 
-/// 计数view
-@property (nonatomic,weak) MTOrderCountView *countView;
 
 @end
 
@@ -169,7 +167,7 @@
 
     // 价格
 
-     _min_priceLabel.text = [@"¥ " stringByAppendingString:_foodModel.min_price.description];
+     _min_priceLabel.text = [@"¥ " stringByAppendingFormat:@"%.1f",[_foodModel.min_price floatValue]];
 //    NSLog(@"%@", [@"¥ " stringByAppendingString:_foodModel.min_price]);
 
     // 月售

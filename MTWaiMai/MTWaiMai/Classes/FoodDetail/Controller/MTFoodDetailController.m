@@ -12,12 +12,16 @@
 #import "MTFoodDetailFlowLayout.h"
 #import "MTCategoryFoodModel.h"
 #import "MTFoodDetailCell.h"
+#import "MTShopCartView.h"
+#import "MTCategoryFoodModel.h"
 
 @interface MTFoodDetailController () <UICollectionViewDataSource>
 
 @property (nonatomic,weak) UICollectionView *collectionView;
 
 @property (nonatomic,assign) BOOL isScrolled;
+
+
 
 @end
 
@@ -44,11 +48,25 @@ static NSString *foodDetailCellID = @"foodDetailCellID";
     // 关闭navi & tab 的 inset
     self.automaticallyAdjustsScrollViewInsets = NO;
 
-
-
-
+    // 设置购物车
+    [self settingShopCartView];
 
 }
+
+#pragma mark - 设置购物车
+- (void)settingShopCartView
+{
+    MTShopCartView *cartView = [MTShopCartView shopCartView];
+    [self.view addSubview:cartView];
+
+    [cartView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.height.offset(44);
+    }];
+
+    cartView.userOrderData = _userOrderData;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

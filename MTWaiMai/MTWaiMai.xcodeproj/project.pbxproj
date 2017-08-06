@@ -50,6 +50,8 @@
 		CC464DEB1F2DFB250099F862 /* MTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DEA1F2DFB250099F862 /* MTNavigationController.m */; };
 		CC464DEE1F2DFC860099F862 /* MTNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DED1F2DFC860099F862 /* MTNavigationBar.m */; };
 		CC464DF11F2E01B40099F862 /* MTBaseController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC464DF01F2E01B40099F862 /* MTBaseController.m */; };
+		CC514D0F1F372C67001156F8 /* MTShopCartView.m in Sources */ = {isa = PBXBuildFile; fileRef = CC514D0E1F372C67001156F8 /* MTShopCartView.m */; };
+		CC514D111F372C7A001156F8 /* MTShopCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC514D101F372C7A001156F8 /* MTShopCartView.xib */; };
 		CC5737DD1F2E2606003F6723 /* NSNumber+MTNumberAddition.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */; };
 		CC8CEFDE1F315DDB00D10B2A /* food.json in Resources */ = {isa = PBXBuildFile; fileRef = CC8CEFDD1F315DDB00D10B2A /* food.json */; };
 		CC8CF0071F31E68100D10B2A /* UIView+FindController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC8CF0061F31E68100D10B2A /* UIView+FindController.m */; };
@@ -172,6 +174,9 @@
 		CC464DED1F2DFC860099F862 /* MTNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTNavigationBar.m; sourceTree = "<group>"; };
 		CC464DEF1F2E01B40099F862 /* MTBaseController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTBaseController.h; sourceTree = "<group>"; };
 		CC464DF01F2E01B40099F862 /* MTBaseController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTBaseController.m; sourceTree = "<group>"; };
+		CC514D0D1F372C67001156F8 /* MTShopCartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTShopCartView.h; sourceTree = "<group>"; };
+		CC514D0E1F372C67001156F8 /* MTShopCartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTShopCartView.m; sourceTree = "<group>"; };
+		CC514D101F372C7A001156F8 /* MTShopCartView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MTShopCartView.xib; sourceTree = "<group>"; };
 		CC5737DA1F2E2570003F6723 /* category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = category.h; sourceTree = "<group>"; };
 		CC5737DB1F2E2606003F6723 /* NSNumber+MTNumberAddition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+MTNumberAddition.h"; sourceTree = "<group>"; };
 		CC5737DC1F2E2606003F6723 /* NSNumber+MTNumberAddition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+MTNumberAddition.m"; sourceTree = "<group>"; };
@@ -538,6 +543,9 @@
 				CC9A57C21F302A95005D91DA /* MTLoopInfoView.m */,
 				CC9A57C41F30344B005D91DA /* MTLoopInfoContainerView.h */,
 				CC9A57C51F30344B005D91DA /* MTLoopInfoContainerView.m */,
+				CC514D0D1F372C67001156F8 /* MTShopCartView.h */,
+				CC514D0E1F372C67001156F8 /* MTShopCartView.m */,
+				CC514D101F372C7A001156F8 /* MTShopCartView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -694,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC8CEFDE1F315DDB00D10B2A /* food.json in Resources */,
+				CC514D111F372C7A001156F8 /* MTShopCartView.xib in Resources */,
 				CC8CF0231F3232F900D10B2A /* food.json in Resources */,
 				CC464D5A1F2DF3DE0099F862 /* LaunchScreen.storyboard in Resources */,
 				CC464D571F2DF3DE0099F862 /* Assets.xcassets in Resources */,
@@ -740,6 +749,7 @@
 				CC8CF0211F3225CF00D10B2A /* MTCategoryFoodModel.m in Sources */,
 				CC8CF0181F32222500D10B2A /* MTFoodListController.m in Sources */,
 				CC464DCD1F2DF9200099F862 /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				CC514D0F1F372C67001156F8 /* MTShopCartView.m in Sources */,
 				CC464DDD1F2DF9200099F862 /* UIImage+MultiFormat.m in Sources */,
 				CC464DD61F2DF9200099F862 /* SDWebImageDecoder.m in Sources */,
 				CC9A57B21F2F51E2005D91DA /* MTInfoController.m in Sources */,

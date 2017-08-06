@@ -15,4 +15,7 @@
 
 @property (nonatomic,strong) NSArray<MTCategoryFoodModel *> *categoryFoodData;
 
+/// 用户点单数据
+@property (nonatomic,strong) NSMutableArray<MTFoodModel *> *userOrderData;
+
 @end

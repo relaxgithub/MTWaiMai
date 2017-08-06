@@ -205,7 +205,6 @@
         // 设置一个bottom,自动计算contentView的height
         make.bottom.offset(-8);
     }];
-
 }
 
 #pragma mark - 代理方法
@@ -231,8 +230,6 @@
         transform = CGAffineTransformScale(transform, scale, scale);
 
         _pictureView.transform = transform;
-
-
     }
 }
 
@@ -258,8 +255,6 @@
             // make.top.equalTo(_min_priceLabel.mas_bottom).offset(16);
             make.top.equalTo(_descLabel.mas_bottom).offset(-24);
         }];
-
-
     }
     else
     {
@@ -283,7 +278,6 @@
         _percentageLabel.text = [NSString stringWithFormat:@"%.2f%%",percentage * 100];
         _progressView.progress = percentage;
     }
-
 }
 
 @end

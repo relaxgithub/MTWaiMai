@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@class MTFoodModel;
+
+
+
+@class MTFoodModel,MTOrderCountView;
 
 @interface MTFoodCell : UITableViewCell
 
 @property (nonatomic,strong) MTFoodModel *foodModel;
+
+/// 计数view
+@property (nonatomic,weak) MTOrderCountView *countView;
 
 @end

@@ -19,10 +19,11 @@
 
 
 
+
 #define KMaxHeaderViewHeight 180 // 头部视图的最大高度
 #define KMinHeaderViewHeight 64 // 头部视图的最小高度
 
-@interface MTShopController () <UIScrollViewDelegate>
+@interface MTShopController () <UIScrollViewDelegate,UIGestureRecognizerDelegate>
 
 /// 头部视图
 @property (nonatomic,weak) MTHeaderView *headerView;
@@ -39,14 +40,10 @@
 /// 头部视图需要用到的model
 @property (nonatomic,strong) MTPOI_SHOP_Model *poi_Shop_Model;
 
-/// 保存视频分类数据
+/// 保存食品分类数据
 @property (nonatomic,strong) NSArray<MTCategoryFoodModel *> *categoryFoodData;
-
 @property (nonatomic,assign,getter=isDataDown) BOOL dataDown;
-
-
 @property (nonatomic,strong) MTFoodListController *foodListController;
-
 
 @end
 
@@ -67,8 +64,11 @@
     [self setupUI];
 }
 
-#pragma mark - 加载店铺数据
-
+/// 手势共存
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
+}
 
 /**
  加载本地数据
@@ -163,8 +163,6 @@
     // 设置字体的灰度
     self.bar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor colorWithWhite:0.4 alpha:0.0]};
 
-
-
     // 设置右边的那个分享按钮
     self.barItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"btn_share"] style:UIBarButtonItemStylePlain target:nil action:nil];
 
@@ -181,6 +179,9 @@
     // 特别是那些根据滚动会产生一些明显的layer线性属性值变化的情况
     UIPanGestureRecognizer *pan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGesture:)];
     [self.view addGestureRecognizer:pan];
+
+    // 手势共存
+    pan.delegate = self;
 
 }
 
@@ -207,7 +208,6 @@
 - (void)settingMiddleTagView {
     /// 中部视图
     UIView *middleTagView = [[UIView alloc] init];
-#warning mark - 调试滚动用,等会要注释掉.
     //middleTagView.alpha = 0.1;
     [self.view addSubview:middleTagView];
     _middleTagView = middleTagView;
@@ -375,6 +375,12 @@
 #pragma mark - 平移手势
 - (void)panGesture:(UIPanGestureRecognizer *)pan
 {
+
+    // 如果scrollView在拖拽,就不要触发pan手势
+    if (_bottomScrollView.isDragging) {
+        return;
+    }
+
     CGPoint p = [pan translationInView:pan.view];
     // headerView的高度在 64 ~ 180 之间,可以变动,否则不行.
     CGFloat currentHeaderViewHeight = _headerView.bounds.size.height;

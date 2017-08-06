@@ -11,8 +11,7 @@
 
 @interface MTOrderCountView ()
 
-/// 加法按钮
-@property (nonatomic,weak) UIButton *subBtn;
+
 /// 减法按钮
 @property (nonatomic,weak) UIButton *plusBtn;
 /// 显示数字label
@@ -92,6 +91,11 @@
     _foodModel.count++;
     // NSLog(@"%zd",_foodModel.count);
     [self updateState];
+
+    if ([self.delegate respondsToSelector:@selector(orderCountView:type:)]) {
+        [self.delegate orderCountView:self type:OrderCountViewPlus];
+    }
+
 }
 
 /// 点击减号按钮
@@ -100,6 +104,11 @@
     _foodModel.count--;
     // NSLog(@"%zd",_foodModel.count);
     [self updateState];
+
+    if ([self.delegate respondsToSelector:@selector(orderCountView:type:)]) {
+        [self.delegate orderCountView:self type:OrderCountViewSub];
+    }
+
 }
 
 - (void)setFoodModel:(MTFoodModel *)foodModel
@@ -109,7 +118,6 @@
     [self updateState];
 
 }
-
 /// 根据用户点餐数量更新视图状态
 - (void)updateState
 {

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="KDK-pA-SQ4" customClass="MTShopCartView">
+            <rect key="frame" x="0.0" y="0.0" width="459" height="50"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rld-nZ-dFS">
+                    <rect key="frame" x="20" y="-20" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="cee-hR-Phi"/>
+                        <constraint firstAttribute="width" constant="50" id="zSA-Ot-EKJ"/>
+                    </constraints>
+                    <state key="normal" image="button_shoppingCart_empty"/>
+                    <state key="highlighted" image="button_shoppingCart_noEmpty"/>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¥ 0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o3K-sD-0Ha">
+                    <rect key="frame" x="90" y="13" width="48" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="1" green="0.79317031650000003" blue="0.27852341400000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qu2-9F-gsc">
+                    <rect key="frame" x="379" y="0.0" width="80" height="50"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="YTF-cI-4T5"/>
+                    </constraints>
+                    <state key="normal" title="请添加">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="qu2-9F-gsc" secondAttribute="bottom" id="DTi-NR-w8H"/>
+                <constraint firstItem="o3K-sD-0Ha" firstAttribute="leading" secondItem="Rld-nZ-dFS" secondAttribute="trailing" constant="20" id="Hx1-Qg-69y"/>
+                <constraint firstItem="Rld-nZ-dFS" firstAttribute="top" secondItem="KDK-pA-SQ4" secondAttribute="top" constant="-20" id="IAo-RY-fnR"/>
+                <constraint firstAttribute="trailing" secondItem="qu2-9F-gsc" secondAttribute="trailing" id="abr-bx-ZUI"/>
+                <constraint firstItem="o3K-sD-0Ha" firstAttribute="centerY" secondItem="KDK-pA-SQ4" secondAttribute="centerY" id="fZK-pA-ywA"/>
+                <constraint firstItem="qu2-9F-gsc" firstAttribute="top" secondItem="KDK-pA-SQ4" secondAttribute="top" id="hxv-9C-W6y"/>
+                <constraint firstItem="Rld-nZ-dFS" firstAttribute="leading" secondItem="KDK-pA-SQ4" secondAttribute="leading" constant="20" id="hzr-d6-p8S"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="buyBtn" destination="qu2-9F-gsc" id="f8h-bB-HmC"/>
+                <outlet property="iconBtn" destination="Rld-nZ-dFS" id="saI-SP-lfk"/>
+                <outlet property="totalPriceLabel" destination="o3K-sD-0Ha" id="wub-rV-sAp"/>
+            </connections>
+            <point key="canvasLocation" x="10.5" y="44"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="button_shoppingCart_empty" width="50" height="50"/>
+        <image name="button_shoppingCart_noEmpty" width="50" height="50"/>
+    </resources>
+</document>

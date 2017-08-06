@@ -15,8 +15,10 @@
 #import "MTFoodCell.h"
 #import "MTFoodListSectionHeaderView.h"
 #import "MTFoodDetailController.h"
+#import "MTShopCartView.h"
+#import "MTOrderCountView.h"
 
-@interface MTFoodListController () <UITableViewDelegate,UITableViewDataSource>
+@interface MTFoodListController () <UITableViewDelegate,UITableViewDataSource,OrderCountViewDelegate>
 
 /// 食品分类tableview
 @property (nonatomic,weak) UITableView *categoryFoodTableView;
@@ -28,6 +30,11 @@
 
 @property (nonatomic,assign) BOOL isClickScroll;
 
+@property (nonatomic,weak) MTShopCartView *shopCartView;
+
+/// 用户点单数据
+@property (nonatomic,strong) NSMutableArray<MTFoodModel *> *userOrderData;
+
 @end
 
 /// 食品分类表格cellID
@@ -37,13 +44,25 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
 
 @implementation MTFoodListController
 
+- (NSMutableArray<MTFoodModel *> *)userOrderData
+{
+    if (_userOrderData == nil) {
+        _userOrderData = [NSMutableArray array];
+    }
+
+    return _userOrderData;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    // 设置购物车视图
+    [self settingShopCartView];
     // 设置界面
     [self setupUI];
-}
 
+    [self.view bringSubviewToFront:_shopCartView];
+}
 
 - (void)setupUI
 {
@@ -57,6 +76,12 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
     //    [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
     //        _categoryFoodData;
     //    }];
+}
+
+#pragma mark - 手势共存
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer
+{
+    return YES;
 }
 
 #pragma mark - 设置网络数据,并激活tableview的reloadData
@@ -74,8 +99,10 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
 
     // 设置约束
     [categoryFoodTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.top.bottom.offset(0);
+        make.left.top.offset(0);
         make.width.offset(100);
+        make.bottom.equalTo(_shopCartView.mas_top).offset(0);
+
     }];
 
     // 设置数据源和代理
@@ -105,6 +132,22 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
 //
 //}
 
+#pragma mark - 设置购物车视图
+- (void)settingShopCartView
+{
+    MTShopCartView *shopCartView = [MTShopCartView shopCartView];
+    [self.view addSubview:shopCartView];
+
+    [shopCartView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.bottom.right.offset(0);
+        make.height.offset(44);
+    }];
+
+    _shopCartView = shopCartView;
+
+
+}
+
 #pragma mark - 添加分类中的商品tableView
 - (void)settingFoodTableView
 {
@@ -112,8 +155,9 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
     [self.view addSubview:foodTableView];
 
     [foodTableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.right.bottom.offset(0);
+        make.top.right.offset(0);
         make.left.equalTo(_categoryFoodTableView.mas_right).offset(0);
+        make.bottom.equalTo(_shopCartView.mas_top).offset(0);
     }];
 
     foodTableView.delegate = self;
@@ -167,25 +211,31 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
     MTFoodModel *food = _categoryFoodData[indexPath.section].spus[indexPath.row];
     cell.foodModel = food;
 
+    // 给conterView设置代理对象
+    cell.countView.delegate = self;
+
     return cell;
 }
 
-/// 返回分组头视图
-- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+#pragma mark - 计数视图代理方法
+- (void)orderCountView:(MTOrderCountView *)countView type:(OrderCountViewType)type
 {
-    if (tableView == _foodTableView) {
-        MTFoodListSectionHeaderView *sectionHeaderView = [[MTFoodListSectionHeaderView alloc] init];
-        sectionHeaderView.textLabel.text = _categoryFoodData[section].name;
-        // 设置字体 // 在这里设置的字体时机比较靠前,会被后续的系统操作给覆盖成原始的17
-        // 所以,需要自定义一个headerFooterView 并在layoutSubviews里设置字体属性
-        // sectionHeaderView.textLabel.font = [UIFont systemFontOfSize:12];
+    if (type == OrderCountViewPlus) {
+        // 如果用户点击了 + 好,就把当前cell的食物加到用户点单列表
+        [self.userOrderData addObject:countView.foodModel];
+        // 点击加号执行动画
+        CGPoint startPoint = [countView convertPoint:countView.subBtn.center toView:_shopCartView];
+        [_shopCartView bezierAnimationWithStartPoint:startPoint];
 
-        // 这样设置的话,需要设定sectionHeaderView的高.
-        return sectionHeaderView;
+    } else {
+        // 如果用户点击了 - 号,就把当前cell的视图从用户点餐列表去掉
+        [self.userOrderData removeObjectAtIndex:[self.userOrderData indexOfObject:countView.foodModel]];
     }
 
-    return nil;
+    // 把用户点单数据,传递给购物车,并更新购物车的显示详情.
+    _shopCartView.userOrderData = self.userOrderData;
 }
+
 
 #pragma mark - 代理方法
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -194,17 +244,21 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         // 并跳转到食物详情页面
         MTFoodDetailController *detailVC = [[MTFoodDetailController alloc] init];
+        
         // detailVC.view;
         //        dispatch_async(dispatch_get_main_queue(), ^{
         //
         //            detailVC.foodModel = _categoryFoodData[indexPath.section].spus[indexPath.row];
         //        });
-//        detailVC.foodModel = _categoryFoodData[indexPath.section].spus[indexPath.row];
+        //        detailVC.foodModel = _categoryFoodData[indexPath.section].spus[indexPath.row];
 
         // 传递数据
         detailVC.categoryFoodData = _categoryFoodData;
         // 滚到目标indexPath
         detailVC.scrollToIndexPath = indexPath;
+        // 用户点菜数据
+        detailVC.userOrderData = _userOrderData;
+
 
         [self.navigationController pushViewController:detailVC animated:YES];
     }
@@ -232,9 +286,28 @@ static NSString *foodTableViewCellID = @"foodTableViewCellID";
         NSIndexPath *firstIndexPath = visiableIndexPath.firstObject;
         // 第一个indexPath 在第几组,就是左边显示的第几个cell
         NSIndexPath *leftCellSelectedIndexPath = [NSIndexPath indexPathForRow:firstIndexPath.section inSection:0];
-        
+
         [_categoryFoodTableView selectRowAtIndexPath:leftCellSelectedIndexPath animated:YES scrollPosition:UITableViewScrollPositionBottom];
     }
 }
+
+/// 返回分组头视图
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    if (tableView == _foodTableView) {
+        MTFoodListSectionHeaderView *sectionHeaderView = [[MTFoodListSectionHeaderView alloc] init];
+        sectionHeaderView.textLabel.text = _categoryFoodData[section].name;
+        // 设置字体 // 在这里设置的字体时机比较靠前,会被后续的系统操作给覆盖成原始的17
+        // 所以,需要自定义一个headerFooterView 并在layoutSubviews里设置字体属性
+        // sectionHeaderView.textLabel.font = [UIFont systemFontOfSize:12];
+
+        // 这样设置的话,需要设定sectionHeaderView的高.
+        return sectionHeaderView;
+    }
+
+    return nil;
+}
+
+
 
 @end
