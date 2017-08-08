@@ -77,22 +77,30 @@
     // 默认执行一次
     // keyAnimation.repeatCount = 1;
 
-    // 在动画前先复制代理
+    keyAnimation.removedOnCompletion = NO;
+    keyAnimation.fillMode = kCAFillModeForwards;
+
+    // 在动画前先赋值代理
     keyAnimation.delegate = self;
 
-    [animationImg.layer addAnimation:keyAnimation forKey:nil];
+    [animationImg.layer addAnimation:keyAnimation forKey:@"animation"];
+
+    // 把小线点存到动画 只有遵守了CAAction的协议才能这样干
+    // 此行代码要写在添加动画前面,不然动画完成之后也取不到
+    [keyAnimation setValue:animationImg forKey:@"animImageView"];
 
     _animationImg = animationImg;
 }
 
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag
 {
+    [[anim valueForKeyPath:@"animImageView"] removeFromSuperview];
     [_animationImg removeFromSuperview];
 }
 
 - (void)settingIconBtnAnimation
 {
-    if (self.userOrderData.count >0) {
+    if (self.userOrderData.count > 0) {
         [UIView animateWithDuration:0.25 animations:^{
             _iconBtn.transform = CGAffineTransformMakeScale(1.2, 1.2);
         } completion:^(BOOL finished) {
